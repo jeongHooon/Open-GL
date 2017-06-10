@@ -1,0 +1,6678 @@
+========================
+Thu Mar  2 11:52:15 2017
+========================
+#include <iostream>
+#include <chrono>
+#include <ctime>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+void save();
+
+int main() {
+	save();
+}
+
+void save() {
+
+	cout << "현재 파일이 저장되었습니다" << endl;
+
+	//날짜와 시간을 기록
+	auto tp = chrono::system_clock::now();
+	time_t t = chrono::system_clock::to_time_t(tp);
+	string date = ctime(&t);
+
+	//현재 소스.cpp 를 기록한다	
+	//저장할 파일을 연다.
+	ifstream in("소스.cpp");
+	if (!in)
+		cout << " 존재하지 않음 " << endl;
+	ofstream out("2017 1 STL 화56목23.txt", ios::app);
+
+	//출력 파일에 저장할 파일에 덧붙인다.
+	out << endl << endl << endl;
+	out << "========================" << endl;
+	out << date;
+	out << "========================" << endl;
+
+	//입력파일의 모든 내용을 출력파일에 쓴다
+	char c;
+	while (in.get(c))
+		out.put(c);
+
+
+}
+
+
+========================
+Thu Mar  2 11:52:17 2017
+========================
+#include <iostream>
+#include <chrono>
+#include <ctime>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+void save();
+
+int main() {
+	save();
+}
+
+void save() {
+
+	cout << "현재 파일이 저장되었습니다" << endl;
+
+	//날짜와 시간을 기록
+	auto tp = chrono::system_clock::now();
+	time_t t = chrono::system_clock::to_time_t(tp);
+	string date = ctime(&t);
+
+	//현재 소스.cpp 를 기록한다	
+	//저장할 파일을 연다.
+	ifstream in("소스.cpp");
+	if (!in)
+		cout << " 존재하지 않음 " << endl;
+	ofstream out("2017 1 STL 화56목23.txt", ios::app);
+
+	//출력 파일에 저장할 파일에 덧붙인다.
+	out << endl << endl << endl;
+	out << "========================" << endl;
+	out << date;
+	out << "========================" << endl;
+
+	//입력파일의 모든 내용을 출력파일에 쓴다
+	char c;
+	while (in.get(c))
+		out.put(c);
+
+
+}
+
+
+========================
+Thu Mar  2 11:52:20 2017
+========================
+#include <iostream>
+#include <chrono>
+#include <ctime>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+void save();
+
+int main() {
+	save();
+}
+
+void save() {
+
+	cout << "현재 파일이 저장되었습니다" << endl;
+
+	//날짜와 시간을 기록
+	auto tp = chrono::system_clock::now();
+	time_t t = chrono::system_clock::to_time_t(tp);
+	string date = ctime(&t);
+
+	//현재 소스.cpp 를 기록한다	
+	//저장할 파일을 연다.
+	ifstream in("소스.cpp");
+	if (!in)
+		cout << " 존재하지 않음 " << endl;
+	ofstream out("2017 1 STL 화56목23.txt", ios::app);
+
+	//출력 파일에 저장할 파일에 덧붙인다.
+	out << endl << endl << endl;
+	out << "========================" << endl;
+	out << date;
+	out << "========================" << endl;
+
+	//입력파일의 모든 내용을 출력파일에 쓴다
+	char c;
+	while (in.get(c))
+		out.put(c);
+
+
+}
+
+
+========================
+Thu Mar  2 12:00:31 2017
+========================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+int main() {
+	save();
+}
+
+
+========================
+Thu Mar  2 12:00:34 2017
+========================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+int main() {
+	save();
+}
+
+
+========================
+Thu Mar  2 12:01:24 2017
+========================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+int main() {
+	new int(100);
+	save();
+}
+
+
+========================
+Thu Mar  2 12:09:06 2017
+========================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+int main() {
+	// 1. atof
+	float f = atof("3.14");
+	cout << f << endl;
+
+	save();
+}
+
+
+========================
+Thu Mar  2 12:16:57 2017
+========================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+// class 와 struct
+// 사용자가 자료형을 정의할 수 있게 하는 키워드
+// 차이점?
+// struct 는 default public
+// class 는 default private
+
+struct X{
+	void f() {
+		cout << "struct 도 멤버함수를 쓴다" << endl;
+	};
+};
+
+int main() {
+	
+	X a;
+	a.f();
+
+	save();
+}
+
+========================
+Tue Mar  7 13:55:28 2017
+========================
+#include <iostream>
+#include "save.h"
+using namespace std;
+void change(int* x, int* y) {
+	int temp = *x;
+	*x = *y;
+	*y = temp;
+}
+int main() {
+	
+	int x = 5, y = 10;
+	change(&x, &y);
+
+	cout << x << " " << y << endl;
+
+	save();
+}
+
+
+========================
+Tue Mar  7 13:58:55 2017
+========================
+#include <iostream>
+#include "save.h"
+using namespace std;
+
+void change(int& x, int& y) {
+	int temp = x;
+	x = y;
+	y = temp;
+}
+int main() {
+
+	int x = 5, y = 10;
+	change(x, y);
+
+	cout << x << " " << y << endl;
+
+	save();
+}
+
+
+
+========================
+Tue Mar  7 14:14:54 2017
+========================
+#include <iostream>
+#include "save.h"
+using namespace std;
+//6
+
+template <class T>
+void change(T& x, T& y) {
+	T temp = x;
+	x = y;
+	y = temp;
+}
+class Monster{
+	int num;
+public:
+	Monster(int n) : num(n){};
+
+	operator int() { return num; }
+};
+int main() {
+
+	Monster a(10), b(20);
+	change(a, b);
+
+	cout << a << " " << b << endl;
+
+	save();
+}
+
+
+
+========================
+Tue Mar  7 14:39:59 2017
+========================
+#include <iostream>
+#include "save.h"
+using namespace std;
+int cmp(const void* a, const void* b) {
+	int *p = (int*)a;
+	int *q = (int*)b;
+	return *p - *q;
+}
+
+
+int main() {
+
+	int a[] = { 1,3,5,7,9,2,4,6,8,10 };
+	//qsort 오름차순
+
+	qsort(a, 10, sizeof(int), cmp);
+
+	for (int d : a)
+		cout << d << " ";
+	cout << endl;
+
+	save();
+}
+
+
+
+========================
+Tue Mar  7 14:57:02 2017
+========================
+#include <iostream>
+#include "save.h"
+using namespace std;
+#define size 10000
+int cmp(const void* a, const void* b) {
+	int *p = (int*)a;
+	int *q = (int*)b;
+	return *p - *q;
+}
+
+
+int main() {
+
+	//int a[] = { 1,3,5,7,9,2,4,6,8,10 };
+	int a[size];
+	for (int i = 0; i < size; ++i)
+		a[i] = rand() % size;
+	//qsort 오름차순
+
+	qsort(a, size, sizeof(int), cmp);
+
+	for (int d : a)
+		cout << d << " ";
+	cout << endl;
+
+	save();
+}
+
+
+
+========================
+Tue Mar  7 15:05:56 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <random>
+using namespace std;
+#define size 10000
+int cmp(const void* a, const void* b) {
+	int *p = (int*)a;
+	int *q = (int*)b;
+	return *p - *q;
+}
+
+
+int main() {
+
+	//int a[] = { 1,3,5,7,9,2,4,6,8,10 };
+	int a[size];
+
+	//랜덤값 생성
+	//1. 랜덤엔진 선택
+	//2. 값의 확률 분포 선택
+	default_random_engine dre;
+	uniform_int_distribution<int> ui;
+	for (int&d : a)
+		d = ui(dre);
+	/*for (int i = 0; i < size; ++i)
+		a[i] = rand() % size;*/
+	//qsort 오름차순
+
+	qsort(a, size, sizeof(int), cmp);
+
+	for (int d : a)
+		cout << d << " ";
+	cout << endl;
+
+	save();
+}
+
+
+
+========================
+Tue Mar  7 15:07:22 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <random>
+using namespace std;
+#define size 100000
+int cmp(const void* a, const void* b) {
+	int *p = (int*)a;
+	int *q = (int*)b;
+	return *p - *q;
+}
+
+
+int main() {
+
+	//int a[] = { 1,3,5,7,9,2,4,6,8,10 };
+	int a[size];
+
+	//랜덤값 생성
+	//1. 랜덤엔진 선택
+	//2. 값의 확률 분포 선택
+	default_random_engine dre;
+	uniform_int_distribution<int> ui;
+	for (int&d : a)
+		d = ui(dre);
+	/*for (int i = 0; i < size; ++i)
+		a[i] = rand() % size;*/
+	//qsort 오름차순
+
+	qsort(a, size, sizeof(int), cmp);
+
+	for (int d : a)
+		cout << d << " ";
+	cout << endl;
+
+	save();
+}
+
+
+
+========================
+Tue Mar  7 15:16:46 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <random>
+using namespace std;
+#define size 100000
+int cmp(const void* a, const void* b) {
+	int *p = (int*)a;
+	int *q = (int*)b;
+	return *p - *q;
+}
+
+
+int main() {
+
+	
+	//int a[size];
+	int* a = new int[size];
+	//랜덤값 생성
+	//1. 랜덤엔진 선택
+	//2. 값의 확률 분포 선택
+	default_random_engine dre;
+	uniform_int_distribution<int> ui;
+	/*for (int&d : a)
+		d = ui(dre);*/
+	for (int i = 0; i < size; ++i)
+		a[i] = ui(dre);
+	//qsort 오름차순
+
+	qsort(a, size, sizeof(int), cmp);
+
+	for (int i = 0; i < size; ++i)
+		cout << a[i] << " ";
+	cout << endl;
+
+	save();
+}
+
+
+
+========================
+Thu Mar  9 10:47:47 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <random>
+using namespace std;
+#define size 100
+class Monster {
+	int n;
+public:
+	Monster() { n = -1; }
+	Monster(int n):n(n){}
+	//operator int() { return num; }
+	int getN() const { return n; }
+};
+ostream& operator<<(ostream& os, const Monster& n) {
+	os << n.getN();
+	return os;
+}
+
+int cmp(const void* a, const void* b) {
+	Monster p = *(Monster*)a;
+	Monster q = *(Monster*)b;
+
+	if (p.getN() < q.getN())
+		return -1;
+	else if (q.getN() < p.getN())
+		return 0;
+	else
+		return 1;
+}
+int main() {
+
+	
+	//int a[size];
+	Monster* a = new Monster[size];
+
+	//랜덤값 생성
+	//1. 랜덤엔진 선택
+	//2. 값의 확률 분포 선택
+	default_random_engine dre;
+	uniform_int_distribution<int> ui;
+	
+	for (int i = 0; i < size; ++i)
+		a[i] = ui(dre);
+	//qsort 오름차순
+
+	qsort(a, size, sizeof(int), cmp);
+
+	for (int i = 0; i < size; ++i)
+		cout << a[i] << " ";
+	cout << endl;
+
+	save();
+}
+
+
+
+========================
+Thu Mar  9 10:56:21 2017
+========================
+#include <iostream>
+#include "save.h"
+#include<algorithm>
+#include <random>
+using namespace std;
+bool xxx(int, int);
+
+bool xxx(int a, int b) {
+	return a < b;
+}
+//STL 의 표준 정렬함수인 sort() 를 사용하여 data 정렬
+// 정수 1000만개를 생성하여 sort() 로 정렬 후 출력
+int main() {
+	
+	int a[] = { 1,3,5,7,9,2,4,6,8,10 };
+	sort(&a[0], &a[10], xxx);
+
+	for (int i = 0; i < 10; ++i)
+		cout << a[i] << " ";
+	cout << endl;
+	save();
+}
+
+
+
+========================
+Thu Mar  9 11:01:26 2017
+========================
+#include <iostream>
+#include "save.h"
+#include<algorithm>
+#include <random>
+using namespace std;
+#define size 1000
+bool xxx(int, int);
+
+bool xxx(int a, int b) {
+	return a < b;
+}
+//STL 의 표준 정렬함수인 sort() 를 사용하여 data 정렬
+// 정수 1000만개를 생성하여 sort() 로 정렬 후 출력
+int main() {
+	int* a = new int[size];
+	//int a[] = { 1,3,5,7,9,2,4,6,8,10 };
+	default_random_engine dre;
+	uniform_int_distribution<int> ui;
+	for (int i = 0; i < size; ++i)
+		a[i] = ui(dre);
+
+	sort(&a[0], &a[size], xxx);
+
+	for (int i = 0; i < size; ++i)
+		cout << a[i] << " ";
+	cout << endl;
+	save();
+}
+
+
+
+========================
+Thu Mar  9 11:25:33 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 10000000
+bool xxx(int, int);
+
+bool xxx(int a, int b) {
+	return a < b;
+}
+//STL 의 표준 정렬함수인 sort() 를 사용하여 data 정렬
+// 정수 1000만개를 생성하여 sort() 로 정렬 후 출력
+//1000만개의 정수를 파일에 저장후 크기 확인
+int main() {
+	ofstream file("ㅗㅗㅗㅗ.txt", ios::app);
+
+	int* a = new int[size];
+	//int a[] = { 1,3,5,7,9,2,4,6,8,10 };
+	default_random_engine dre;
+	uniform_int_distribution<int> ui;
+	for (int i = 0; i < size; ++i)
+		a[i] = ui(dre);
+
+	sort(&a[0], &a[size], xxx);
+
+	
+	for (int i = 0; i < size; ++i) {
+		//cout << a[i] << " ";
+		file << a[i] << " ";
+	}
+	cout << endl;
+	save();
+}
+
+
+
+========================
+Thu Mar  9 11:44:56 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+bool xxx(int, int);
+
+bool xxx(int a, int b) {
+	return a < b;
+}
+//STL 의 표준 정렬함수인 sort() 를 사용하여 data 정렬
+// 정수 1000만개를 생성하여 sort() 로 정렬 후 출력
+//1000만개의 정수를 파일에 저장후 크기 확인
+int main() {
+	ofstream file("ㅗㅗㅗㅗ.txt", ios::app);
+
+	int* a = new int[size];
+	//int a[] = { 1,3,5,7,9,2,4,6,8,10 };
+	default_random_engine dre;
+	uniform_int_distribution<int> ui;
+	for (int i = 0; i < size; ++i)
+		a[i] = ui(dre);
+
+	sort(&a[0], &a[size], xxx);
+
+	file.write((const char*)a, size * sizeof(int));
+
+	//for (int i = 0; i < size; ++i) {
+	//	//cout << a[i] << " ";
+	//	file << a[i] << " ";
+	//}
+	cout << endl;
+	save();
+}
+
+
+
+========================
+Thu Mar  9 11:45:30 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+bool xxx(int, int);
+
+bool xxx(int a, int b) {
+	return a < b;
+}
+//STL 의 표준 정렬함수인 sort() 를 사용하여 data 정렬
+// 정수 1000만개를 생성하여 sort() 로 정렬 후 출력
+//1000만개의 정수를 파일에 저장후 크기 확인
+int main() {
+	ofstream file("ㅗㅗㅗㅗ.txt");
+
+	int* a = new int[size];
+	//int a[] = { 1,3,5,7,9,2,4,6,8,10 };
+	default_random_engine dre;
+	uniform_int_distribution<int> ui;
+	for (int i = 0; i < size; ++i)
+		a[i] = ui(dre);
+
+	sort(&a[0], &a[size], xxx);
+
+	file.write((const char*)a, size * sizeof(int));
+
+	//for (int i = 0; i < size; ++i) {
+	//	//cout << a[i] << " ";
+	//	file << a[i] << " ";
+	//}
+	cout << endl;
+	save();
+}
+
+
+
+========================
+Thu Mar  9 11:47:21 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+bool xxx(int, int);
+
+bool xxx(int a, int b) {
+	return a < b;
+}
+//STL 의 표준 정렬함수인 sort() 를 사용하여 data 정렬
+// 정수 1000만개를 생성하여 sort() 로 정렬 후 출력
+//1000만개의 정수를 파일에 저장후 크기 확인
+int main() {
+	ifstream file("ㅗㅗㅗㅗ.txt");
+
+	int* a = new int[size];
+	
+	file.read((char*)a, size);
+	for (int i = 0; i < size; ++i) {
+		//cout << a[i] << " ";
+		cout << a[i] << " ";
+	}
+	cout << endl;
+	save();
+}
+
+
+
+========================
+Thu Mar  9 11:53:04 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+int main() {
+	char a[] = "C++ stl";
+
+	sort(a, a+7);
+
+	//for (int i = 0; i < 7; ++i)
+		cout << a << endl;
+
+	save();
+}
+
+
+
+========================
+Thu Mar  9 11:58:20 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+int main() {
+	char a[] = "C++ stl";
+
+	sort(a, a + 7, [](char a, char b) {return a > b; });
+
+	//for (int i = 0; i < 7; ++i)
+		cout << a << endl;
+
+	save();
+}
+
+
+
+========================
+Thu Mar  9 12:00:12 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+int main() {
+	char a[] = "C++ stl";
+
+	sort(a, a + 7, [](char a, char b) -> bool {return a > b; });
+
+	//for (int i = 0; i < 7; ++i)
+		cout << a << endl;
+
+	save();
+}
+
+
+
+========================
+Thu Mar  9 12:11:44 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+class Monster {
+	int n;
+public:
+	Monster() { n = -1; }
+	Monster(int) : n(n){}
+	operator int() const { return n; }
+};
+//ostream& operator<<(ostream& os, const Monster& n) {
+//	os << n.getN();
+//	return os;
+//}
+int main() {
+	Monster a[5]{ 1,6,3,2,5 };
+
+	sort(begin(a), end(a), [](const Monster a, const Monster b)->bool {return a > b; });
+
+	for(Monster d:a)
+		cout << d << endl;
+
+	save();
+}
+
+
+
+========================
+Thu Mar  9 12:12:00 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+class Monster {
+	int n;
+public:
+	Monster() { n = -1; }
+	Monster(int) : n(n){}
+	operator int() const { return n; }
+};
+//ostream& operator<<(ostream& os, const Monster& n) {
+//	os << n.getN();
+//	return os;
+//}
+int main() {
+	Monster a[5]{ 1,6,3,2,5 };
+
+	sort(begin(a), end(a), [](const Monster a, const Monster b)->bool {return a > b; });
+
+	for(Monster d:a)
+		cout << d << endl;
+
+	save();
+}
+
+
+
+========================
+Thu Mar  9 12:12:10 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+class Monster {
+	int n;
+public:
+	Monster() { n = -1; }
+	Monster(int) : n(n){}
+	operator int() const { return n; }
+};
+//ostream& operator<<(ostream& os, const Monster& n) {
+//	os << n.getN();
+//	return os;
+//}
+int main() {
+	Monster a[5]{ 1,6,3,2,5 };
+
+	sort(begin(a), end(a), [](const Monster a, const Monster b) {return a > b; });
+
+	for(Monster d:a)
+		cout << d << endl;
+
+	save();
+}
+
+
+
+========================
+Thu Mar  9 12:12:20 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+class Monster {
+	int n;
+public:
+	Monster(int) : n(n){}
+	operator int() const { return n; }
+};
+//ostream& operator<<(ostream& os, const Monster& n) {
+//	os << n.getN();
+//	return os;
+//}
+int main() {
+	Monster a[5]{ 1,6,3,2,5 };
+
+	sort(begin(a), end(a), [](const Monster a, const Monster b) {return a > b; });
+
+	for(Monster d:a)
+		cout << d << endl;
+
+	save();
+}
+
+
+
+========================
+Thu Mar  9 12:12:56 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+class Monster {
+	int n;
+public:
+	Monster(int) : n(n){}
+	operator int() const { return n; }
+};
+//ostream& operator<<(ostream& os, const Monster& n) {
+//	os << n.getN();
+//	return os;
+//}
+int main() {
+	Monster a[5]{ 1,4,3,2,5 };
+
+	sort(begin(a), end(a), [](const Monster& a, const Monster& b) {return a > b; });
+
+	for(Monster d:a)
+		cout << d << endl;
+
+	save();
+}
+
+
+
+========================
+Thu Mar  9 12:13:23 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+class Monster {
+	int n;
+public:
+	Monster() { n = -1; }
+	Monster(int) : n(n){}
+	operator int() const { return n; }
+};
+//ostream& operator<<(ostream& os, const Monster& n) {
+//	os << n.getN();
+//	return os;
+//}
+int main() {
+	Monster a[5]{ 1,4,3,2,5 };
+
+	sort(begin(a), end(a), [](const Monster& a, const Monster& b) {return a > b; });
+
+	for(Monster d:a)
+		cout << d << endl;
+
+	save();
+}
+
+
+
+========================
+Thu Mar  9 12:14:06 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+class Monster {
+	int n;
+public:
+	Monster() { n = -1; }
+	Monster(int n) : n(n){}
+	operator int() const { return n; }
+};
+//ostream& operator<<(ostream& os, const Monster& n) {
+//	os << n.getN();
+//	return os;
+//}
+int main() {
+	Monster a[5]{ 1,4,3,2,5 };
+
+	sort(begin(a), end(a), [](const Monster& a, const Monster& b) {return a > b; });
+
+	for(Monster d:a)
+		cout << d << endl;
+
+	save();
+}
+
+
+
+========================
+Tue Mar 14 13:46:07 2017
+========================
+#include <iostream>
+#include "save.h"
+#include <algorithm>
+#include <random>
+#include <fstream>
+using namespace std;
+#define size 100
+class Dog {
+	string name;
+	int age;
+public:
+	Dog() { age = -1; };
+	Dog(string n, int i) : name(n), age(i){}
+	operator int() const { return age; }
+};
+
+int main() {
+	
+	Dog d[10]{ {"순실",3},{"유라",2},{"시호",4} };
+
+	sort(begin(d), end(d), [](const Dog& a, const Dog& b) {return a > b; });
+
+	for (Dog d : d)
+		cout << d << endl;
+
+
+
+
+	save();
+}
+
+
+
+========================
+Tue Mar 14 14:05:35 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+#include <string>
+#include "save.h"
+#define size 100
+
+using namespace std;
+
+class Dog {
+	string name;
+	int age;
+public:
+	Dog() : name{}, age(-1){}
+	Dog(string n, int i) : name(n), age(i){}
+	void show() const { cout << "이름 : " << name << "나이 : " << age << endl; }
+	//operator string() const { return name; }
+	bool operator<(const Dog& other) const { return name < other.name; }
+};
+
+int main() {
+	
+	Dog d[10]{ {"순실",3},{"유라",2},{"시호",4} };
+
+	sort(begin(d), end(d), [](const Dog& a, const Dog& b) {return a < b; }); //bool Dog.operator<(const Dog& b)
+
+	for (const Dog& d : d)
+		d.show();
+
+
+
+
+	save();
+}
+
+
+
+========================
+Tue Mar 14 14:08:02 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <random>
+#include <fstream>
+#include <string>
+#include "save.h"
+#define size 100
+
+using namespace std;
+
+class Dog {
+	string name;
+	int age;
+public:
+	Dog() : name{}, age(-1){}
+	Dog(string n, int i) : name(n), age(i){}
+	void show() const { cout << "이름 : " << name << " 나이 : " << age << endl; }
+	//operator string() const { return name; }
+	string getName() const { return name; }
+	bool operator<(const Dog& other) const { return name < other.name; }
+};
+
+int main() {
+	
+	Dog d[10]{ {"순실",3},{"유라",2},{"시호",4} };
+
+	sort(begin(d), end(d), [](const Dog& a, const Dog& b) {return a.getName() < b.getName(); }); //bool Dog.operator<(const Dog& b)
+
+	for (const Dog& d : d)
+		d.show();
+
+
+
+
+	save();
+}
+
+
+
+========================
+Tue Mar 14 14:56:55 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+#define size 100
+
+using namespace std;
+// c - 절차적 프로그래밍
+// OOP - Object Oriented Programing
+// STL - Generic Programming(자료형에 무관한) sort()
+// 1. c++98
+// 2. c++03
+// 3. c++11/14
+// 3장 새 언어 특성
+int main() {
+	vector<string> v{ "2515","4214","d2","22224" };
+	sort(v.begin(), v.end());
+	for (string d : v)
+		cout << d << endl;
+	int* p = nullptr;
+	save();
+}
+
+
+
+========================
+Tue Mar 14 14:58:15 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+#define size 100
+
+using namespace std;
+
+// 3장 새 언어 특성
+int main() {
+	vector<string> v{ "2515","4214","d2","22224" };
+	// v의 처음 원소를 출력
+	v.begin();
+	
+	save();
+}
+
+
+
+========================
+Tue Mar 14 15:00:10 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+#define size 100
+
+using namespace std;
+
+// 3장 새 언어 특성
+int main() {
+	vector<string> v{ "2515","4214","d2","22224" };
+	// v의 처음 원소를 출력
+	vector<string>::const_iterator p = v.begin();
+	cout << *p << endl;
+	
+	save();
+}
+
+
+
+========================
+Tue Mar 14 15:07:06 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+#define size 100
+
+using namespace std;
+
+// 3장 새 언어 특성
+//'=' -> 타입 매칭
+int main() {
+	vector<string> v{ "2515","4214","d2","22224" };
+	// v의 처음 원소를 출력
+	//vector<string>::const_iterator p = v.begin();
+	auto p = v.begin();
+	cout << *p << endl;
+	
+	save();
+}
+
+
+
+========================
+Tue Mar 14 15:09:51 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+#define size 100
+
+using namespace std;
+
+// 3장 새 언어 특성
+
+
+int main() {
+	
+	int i; // 초기화(RAII) - Resource Acquisition Is Initializtion
+	i = 0; //assignment
+	save();
+}
+
+
+
+========================
+Thu Mar 16 10:38:48 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+};
+
+
+int main(){
+	Model a;
+
+	save();
+}
+
+
+========================
+Thu Mar 16 10:41:47 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+오전 10:52 2017-03-16
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+public:
+	Model() { cout << "default 생성자" << endl; }
+	~Model() { cout << "default 소멸자" << endl; }
+};
+
+
+int main(){
+	Model a;
+	
+	save();
+}
+
+
+========================
+Thu Mar 16 10:53:04 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+public:
+	Model() : size(0),data(nullptr){ cout << "default 생성자" << endl; }
+	Model(int i) :size(i) {
+		cout << "생성자" << size << "byte" << endl;
+		data = new char[1000];
+	};
+	~Model() { 
+		cout << "소멸자" << size << "byte" << endl; 
+		if (data != nullptr)
+			delete[] data;
+	}
+};
+
+
+int main(){
+	Model a;
+	Model b(1000);
+	save();
+}
+
+
+========================
+Thu Mar 16 10:54:01 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+public:
+	Model() : size(0),data(nullptr){ cout << "default 생성자" << endl; }
+	Model(int i) :size(i) {
+		cout << "생성자" << size << "byte" << endl;
+		data = new char[1000];
+	};
+	~Model() { 
+		cout << "소멸자" << size << "byte" << endl; 
+		if (data != nullptr)
+			delete[] data;
+	}
+};
+
+
+int main(){
+	{Model a; }//지역
+	Model b(1000);
+	save();
+}
+
+
+========================
+Thu Mar 16 11:08:24 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+public:
+	Model() : size(0),data(nullptr){ cout << "default 생성자" << endl; }
+	Model(int i) :size(i) {
+		cout << "생성자" << size << "byte" << endl;
+		data = new char[1000];
+	};
+	Model(Model &p) {
+		;
+	}
+	~Model() { 
+		cout << "소멸자" << size << "byte" << endl; 
+		if (data != nullptr)
+			delete[] data;
+	}
+};
+
+
+int main(){
+	{Model a; }//지역
+	Model b(1000);
+	Model c = b;
+	save();
+}
+
+
+========================
+Thu Mar 16 11:14:12 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+public:
+	Model() : size(0),data(nullptr){ cout << "default 생성자" << endl; }
+	Model(int i) :size(i) {
+		cout << "생성자" << size << "byte 주소 " << (void*)data << endl;
+		data = new char[1000];
+	};
+	Model(const Model& other) : size(other.size){
+		cout << "복사 생성자" << size << "byte 주소 " << (void*)data << endl;
+		data = new char[size];
+		memcpy(data, other.data, size);
+	}
+	~Model() { 
+		cout << "소멸자" << size << "byte" << endl; 
+		if (data != nullptr)
+			delete[] data;
+	}
+};
+
+
+int main(){
+	{Model a; }//지역
+	Model b(1000);
+	Model c = b;
+	save();
+}
+
+
+========================
+Thu Mar 16 11:15:32 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+public:
+	Model() : size(0),data(nullptr){ cout << "default 생성자" << endl; }
+	Model(int i) :size(i) {
+		cout << "생성자" << size << "byte 주소 " << (void*)data << endl;
+		data = new char[1000];
+	};
+	Model(const Model& other) : size(other.size){
+		cout << "복사 생성자" << size << "byte 주소 " << (void*)data << endl;
+		data = new char[size];
+		memcpy(data, other.data, size);
+	}
+	~Model() { 
+		cout << "소멸자" << size << "byte" << endl; 
+		if (data != nullptr)
+			delete[] data;
+	}
+};
+
+
+int main(){
+	{Model a; }//지역
+	Model b(1000);
+	Model c = b;
+	save();
+}
+
+
+========================
+Thu Mar 16 11:18:36 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+public:
+	Model() : size(0),data(nullptr){ cout << "default 생성자" << endl; }
+	Model(int i) :size(i) {
+		cout << "생성자" << size << "byte 주소 " << (void*)data << endl;
+		data = new char[1000];
+	};
+	Model(const Model& other) : size(other.size){
+		cout << "복사 생성자" << size << "byte 주소 " << (void*)data << endl;
+		data = new char[size];
+		memcpy(data, other.data, size);
+	}
+	~Model() { 
+		cout << "소멸자" << size << "byte 주소 " << (void*)data << endl;
+		if (data != nullptr)
+			delete[] data;
+	}
+};
+
+
+int main(){
+	Model a;
+	Model b(1000);
+	Model c = b;
+	save();
+}
+
+
+========================
+Thu Mar 16 11:42:23 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+public:
+	Model() : size(0),data(nullptr){ cout << "default 생성자" << endl; }
+	Model(int i) :size(i) {
+		data = new char[1000];
+		cout << "생성자" << size << "byte 주소 " << (void*)data << endl;
+	};
+	Model(const Model& other) : size(other.size){
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << "복사 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	~Model() { 
+		cout << "소멸자" << size << "byte 주소 " << (void*)data << endl;
+		if (data != nullptr)
+			delete[] data;
+	}
+	void operator=(const Model& other) {
+		if (this == &other)
+			return;
+		if (data != nullptr)
+			delete[] data;
+		size = other.size;
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << "할당연산자" << size << "byte 주소 " << (void*)data << endl;
+		
+	}
+};
+
+
+int main(){
+	Model a;
+	Model b(1000);
+	Model c = b;
+	a = c; // a 와 c 둘다 이미 생성된 후에 c 를 a로 assign 한다.
+		   // a.opperator=(c)
+	save();
+}
+
+
+========================
+Thu Mar 16 11:47:56 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+public:
+	Model() : size(0),data(nullptr){ cout << "default 생성자" << endl; }
+	Model(int i) :size(i) {
+		data = new char[1000];
+		cout << "생성자" << size << "byte 주소 " << (void*)data << endl;
+	};
+	Model(const Model& other) : size(other.size){
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << "복사 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	~Model() { 
+		cout << "소멸자" << size << "byte 주소 " << (void*)data << endl;
+		if (data != nullptr)
+			delete[] data;
+	}
+	Model& operator=(const Model& other) {
+		if (this == &other)
+			return *this;
+		if (data != nullptr)
+			delete[] data;
+		size = other.size;
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << "할당연산자" << size << "byte 주소 " << (void*)data << endl;
+		return *this;
+	}
+};
+
+
+int main(){
+	Model a;
+	Model b(1000);
+	Model c = b;
+	a = c; // a 와 c 둘다 이미 생성된 후에 c 를 a로 assign 한다.
+		   // a.opperator=(c)
+	a = b = c;
+	save();
+}
+
+
+========================
+Thu Mar 16 11:52:05 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+int gid;
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+	int id;
+public:
+	Model() : size(0),data(nullptr),id(gid++){ cout << id << " 생성자" << endl; }
+	Model(int i) :size(i), id(gid++) {
+		data = new char[1000];
+		cout << id << "생성자" << size << "byte 주소 " << (void*)data << endl;
+	};
+	Model(const Model& other) : size(other.size), id(gid++) {
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "복사 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	~Model() { 
+		cout << id << "소멸자" << size << "byte 주소 " << (void*)data << endl;
+		if (data != nullptr)
+			delete[] data;
+	}
+	Model& operator=(const Model& other) {
+		if (this == &other)
+			return *this;
+		if (data != nullptr)
+			delete[] data;
+		size = other.size;
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "할당연산자" << size << "byte 주소 " << (void*)data << endl;
+		return *this;
+	}
+};
+
+
+int main(){
+	Model a;
+	Model b(1000);
+	Model c = b;
+	a = c; // a 와 c 둘다 이미 생성된 후에 c 를 a로 assign 한다.
+		   // a.opperator=(c)
+	a = b = c;
+	save();
+}
+
+
+========================
+Thu Mar 16 11:53:10 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+int gid;
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+	int id;
+public:
+	Model() : size(0),data(nullptr),id(gid++){ cout << id << " 생성자" << endl; }
+	Model(int i) :size(i), id(gid++) {
+		data = new char[1000];
+		cout << id << "생성자" << size << "byte 주소 " << (void*)data << endl;
+	};
+	Model(const Model& other) : size(other.size), id(gid++) {
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "복사 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	~Model() { 
+		cout << id << "소멸자" << size << "byte 주소 " << (void*)data << endl;
+		if (data != nullptr)
+			delete[] data;
+	}
+	Model& operator=(const Model& other) {
+		if (this == &other)
+			return *this;
+		if (data != nullptr)
+			delete[] data;
+		size = other.size;
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "할당연산자" << size << "byte 주소 " << (void*)data << endl;
+		return *this;
+	}
+};
+
+
+int main(){
+	Model a[10];
+
+	save();
+}
+
+
+========================
+Thu Mar 16 12:05:25 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+int gid;
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+	int id;
+public:
+	Model() : size(0),data(nullptr),id(gid++){ cout << id << " 생성자" << endl; }
+	Model(int i) :size(i), id(gid++) {
+		data = new char[1000];
+		cout << id << "생성자" << size << "byte 주소 " << (void*)data << endl;
+	};
+	Model(const Model& other) : size(other.size), id(gid++) {
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "복사 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	//이동 생성자
+	Model(Model&& other) : id(gid++){
+		size = other.size;
+		data = other.data;
+		other.data = nullptr;
+		cout << id << "이동 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	~Model() { 
+		cout << id << "소멸자" << size << "byte 주소 " << (void*)data << endl;
+		if (data != nullptr)
+			delete[] data;
+	}
+	Model& operator=(const Model& other) {
+		if (this == &other)
+			return *this;
+		if (data != nullptr)
+			delete[] data;
+		size = other.size;
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "할당연산자" << size << "byte 주소 " << (void*)data << endl;
+		return *this;
+	}
+};
+
+
+int main(){
+	Model a(10000);
+	Model c = move(a);  // Model 이 이동생성을 지원하면
+						// Model클래스가 이동생성자를 지원하면 이동
+
+	save();
+}
+
+
+========================
+Tue Mar 21 13:52:59 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+int gid;
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+	int id;
+public:
+	Model() : size(0),data(nullptr),id(gid++){ cout << id << " 생성자" << endl; }
+	Model(int i) :size(i), id(gid++) {
+		data = new char[1000];
+		cout << id << "생성자" << size << "byte 주소 " << (void*)data << endl;
+	};
+	Model(const Model& other) : size(other.size), id(gid++) {
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "복사 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	//이동 생성자
+	Model(Model&& other) : id(gid++){
+		size = other.size;
+		data = other.data;
+		other.size = 0;
+		other.data = nullptr;
+		cout << id << "이동 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	~Model() { 
+		cout << id << "소멸자" << size << "byte 주소 " << (void*)data << endl;
+		if (data != nullptr)
+			delete[] data;
+	}
+	Model& operator=(const Model& other) {
+		if (this == &other)
+			return *this;
+		if (data != nullptr)
+			delete[] data;
+		size = other.size;
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "할당연산자" << size << "byte 주소 " << (void*)data << endl;
+		return *this;
+	}
+};
+
+
+int main(){
+	
+	Model a(1000);
+	Model b(2000);
+
+	b = move(a);
+	// 프로그래머가 a를 이동하여 b에 배정(할당, 대입, assign)
+	// 그러나 이 연산은 아직 프로그램하지 않았다.
+	save();
+}
+
+
+========================
+Tue Mar 21 14:02:56 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+int gid;
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+	int id;
+public:
+	Model() : size(0),data(nullptr),id(gid++){ cout << id << " 생성자" << endl; }
+	Model(int i) :size(i), id(gid++) {
+		data = new char[1000];
+		cout << id << "생성자" << size << "byte 주소 " << (void*)data << endl;
+	};
+	Model(const Model& other) : size(other.size), id(gid++) {
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "복사 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	//이동 생성자
+	Model(Model&& other) : id(gid++){
+		size = other.size;
+		data = other.data;
+		other.size = 0;
+		other.data = nullptr;
+		cout << id << "이동 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	~Model() { 
+		cout << id << "소멸자" << size << "byte 주소 " << (void*)data << endl;
+		if (data != nullptr)
+			delete[] data;
+	}
+	Model& operator=(const Model& other) {
+		if (this == &other)
+			return *this;
+		if (data != nullptr)
+			delete[] data;
+		size = other.size;
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "할당연산자" << size << "byte 주소 " << (void*)data << endl;
+		return *this;
+	}
+	Model& operator=(Model&& other) {
+		//나를 이동시키는건 의미가없다.
+		if (this == &other)
+			return *this;
+		//내가 할당받은 메모리가 있다면 먼저 해지한다.
+		if (data != nullptr)
+			delete[] data;
+		size = other.size;
+		data = other.data;
+
+		//내 멤버를 other의 멤버값으로 쓴다.
+		other.size = 0;
+		other.data = nullptr;
+		//other의 멤버를 초기화한다.
+
+		cout << id << "이동대입연산자" << size << "byte 주소 " << (void*)data << endl;
+		return *this;
+	}
+};
+
+
+int main(){
+	
+	Model a(1000);
+	Model b(2000);
+
+	b = move(a);
+	// 프로그래머가 a를 이동하여 b에 배정(할당, 대입, assign)
+	// 그러나 이 연산은 아직 프로그램하지 않았다.
+	//move assignment operator 를 만들지 않은 상태에서 이동하면
+	//컴파일러는 assignment operator를 호출하는 코드를 만든다.
+	//연산자를 프로그래밍 해야한다.
+	save();
+}
+
+
+========================
+Tue Mar 21 14:15:48 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+//#define size 100
+int gid;
+
+using namespace std;
+
+class Model {
+	char* data;
+	size_t size;
+	int id;
+public:
+	Model() : size(0),data(nullptr),id(gid++){ cout << id << " 생성자" << endl; }
+	Model(int i) :size(i), id(gid++) {
+		data = new char[1000];
+		cout << id << "생성자" << size << "byte 주소 " << (void*)data << endl;
+	};
+	Model(const Model& other) : size(other.size), id(gid++) {
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "복사 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	//이동 생성자
+	Model(Model&& other) : id(gid++){
+		size = other.size;
+		data = other.data;
+		other.size = 0;
+		other.data = nullptr;
+		cout << id << "이동 생성자" << size << "byte 주소 " << (void*)data << endl;
+	}
+	~Model() { 
+		cout << id << "소멸자" << size << "byte 주소 " << (void*)data << endl;
+		if (data != nullptr)
+			delete[] data;
+	}
+	Model& operator=(const Model& other) {
+		if (this == &other)
+			return *this;
+		if (data != nullptr)
+			delete[] data;
+		size = other.size;
+		data = new char[size];
+		memcpy(data, other.data, size);
+		cout << id << "할당연산자" << size << "byte 주소 " << (void*)data << endl;
+		return *this;
+	}
+	Model& operator=(Model&& other) {
+		//나를 이동시키는건 의미가없다.
+		if (this == &other)
+			return *this;
+		//내가 할당받은 메모리가 있다면 먼저 해지한다.
+		if (data != nullptr)
+			delete[] data;
+		size = other.size;
+		data = other.data;
+
+		//내 멤버를 other의 멤버값으로 쓴다.
+		other.size = 0;
+		other.data = nullptr;
+		//other의 멤버를 초기화한다.
+
+		cout << id << "이동대입연산자" << size << "byte 주소 " << (void*)data << endl;
+		return *this;
+	}
+};
+
+
+int main(){
+	
+	Model a(1000);
+	Model b(2000);
+
+	b = move(a);
+	// 프로그래머가 a를 이동하여 b에 배정(할당, 대입, assign)
+	// 그러나 이 연산은 아직 프로그램하지 않았다.
+	//move assignment operator 를 만들지 않은 상태에서 이동하면
+	//컴파일러는 assignment operator를 호출하는 코드를 만든다.
+	//연산자를 프로그래밍 해야한다.
+	save();
+}
+//  클래스를 만들떄 - 멤버변수에 *가 있다면
+//					  아마도 *는 자원들 가리키려슨 용도
+//생성자에서 자원을 동적으로 확보하려고 한다.
+//프로그래머는 반드시 소멸자에서 확보했던 자원들 되돌린다.
+//깊은복사를 위한 복사생성자를 프로그램한다.
+//assignment 연산자를 프로그램하여야한다.
+
+// 데이터가 제대로 이동되길원한다면
+// - 이동생성자를 프로그램한다
+// - 이동 assignment 연산자 프로그램
+
+
+========================
+Tue Mar 21 14:36:47 2017
+========================
+#include <iostream>
+#include <algorithm>
+
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+
+
+int main(){
+	vector<int> v{ 1,2,3,5,4 };
+	cout << v.size() << endl;
+	v.push_back(7);
+	cout << v.size() << endl;
+	save();
+}
+
+
+========================
+Tue Mar 21 14:53:54 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+
+//키보드에서 원하는 만큼의 단어를 입력받아 정렬 후 출력하라
+
+int main(){
+	vector<string>v;
+	copy(istream_iterator<string>(cin), istream_iterator<string>(), back_inserter(v));
+	sort(v.begin(), v.end());
+
+	cout << endl << "정렬결과" << endl;
+	for (const string d : v)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Tue Mar 21 15:02:07 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+
+int main(){
+	vector<Model>v;
+	
+	v.push_back(Model(123));
+	save();
+}
+
+
+========================
+Tue Mar 21 15:04:22 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+
+int main(){
+	vector<Model>v;
+	
+	v.push_back(Model(123));
+	cout << endl;
+	v.push_back(Model(5555));
+	save();
+}
+
+
+========================
+Thu Mar 23 10:42:08 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+
+int main(){
+	vector<Model>v;
+	
+	Model* p = new Model(123);
+	v.push_back(Model(123));
+	
+	save();
+}
+
+
+========================
+Thu Mar 23 10:47:44 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 1 23
+// 람다 - 함수의 몸체를 지역에서 정의할 수 있는 이름없는 함수이다.
+//
+int main(){
+	
+	{
+		[]() {cout << "" << endl; };
+	}
+	
+	save();
+}
+
+
+========================
+Thu Mar 23 10:54:24 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 1 23
+// 람다 - 함수의 몸체를 지역에서 정의할 수 있는 이름없는 함수이다. -자신이 정의된 지역에서 만들어진 변수에 접근(읽기 /쓰기)할 수 있다.
+//
+int main(){
+	
+	auto f = []() {cout << "Lambda" << endl; };
+	f();
+	
+	save();
+}
+
+
+========================
+Thu Mar 23 10:55:32 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 1 23
+// 람다 - 함수의 몸체를 지역에서 정의할 수 있는 이름없는 함수이다. -자신이 정의된 지역에서 만들어진 변수에 접근(읽기 /쓰기)할 수 있다.
+//
+int main(){
+	
+	int n{ 100 };
+	[n]() {cout << n << endl; };
+	
+	
+	save();
+}
+
+
+========================
+Thu Mar 23 10:55:54 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 1 23
+// 람다 - 함수의 몸체를 지역에서 정의할 수 있는 이름없는 함수이다. -자신이 정의된 지역에서 만들어진 변수에 접근(읽기 /쓰기)할 수 있다.
+//
+int main(){
+	
+	int n{ 100 };
+	[n]() {cout << n << endl; }();
+	
+	
+	save();
+}
+
+
+========================
+Thu Mar 23 11:02:21 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+// 람다 - 함수의 몸체를 지역에서 정의할 수 있는 이름없는 함수이다. -자신이 정의된 지역에서 만들어진 변수에 접근(읽기 /쓰기)할 수 있다.
+//
+
+void test(int);
+int main(){
+	
+	cout << typeid(test).name() << endl;
+	auto f = []() { cout << "lambda" << endl; };
+	cout << typeid(f).name()<< endl;
+	save();
+}
+
+
+========================
+Thu Mar 23 11:07:32 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+// 람다 - 함수의 몸체를 지역에서 정의할 수 있는 이름없는 함수이다. -자신이 정의된 지역에서 만들어진 변수에 접근(읽기 /쓰기)할 수 있다.
+//
+
+enum class GameStatus { RUN = 0, PAUSE = 1, END = 2 };
+
+int main(){
+	
+	GameStatus status = GameStatus::RUN;
+
+	save();
+}
+
+
+========================
+Thu Mar 23 11:23:54 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+// 람다 - 함수의 몸체를 지역에서 정의할 수 있는 이름없는 함수이다. -자신이 정의된 지역에서 만들어진 변수에 접근(읽기 /쓰기)할 수 있다.
+//
+
+// 예외처리 - STL은 속도를 최우선으로 한다. 예외처리가 필요하다면 프로그래머가 따로 전용코드를 호출하여야 한다.
+//(메모리 alloc 예외, bad_cast 예외)
+
+int main(){
+	
+	//bad_alloc exception : 전역 연산자 new가 실패할 때 던져진다.
+		int i = 0;
+	while (true)
+	{
+		try {
+			new int[10000000];
+		}
+		catch (...) { //... ellipsis(타원)
+			cout << "예외를 잡았다" << endl;
+			break;
+		}
+		cout << i++ << "할당성공" << endl;
+	}
+	save();
+}
+
+
+========================
+Thu Mar 23 11:24:33 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+// 람다 - 함수의 몸체를 지역에서 정의할 수 있는 이름없는 함수이다. -자신이 정의된 지역에서 만들어진 변수에 접근(읽기 /쓰기)할 수 있다.
+//
+
+// 예외처리 - STL은 속도를 최우선으로 한다. 예외처리가 필요하다면 프로그래머가 따로 전용코드를 호출하여야 한다.
+//(메모리 alloc 예외, bad_cast 예외)
+
+int main(){
+	
+	//bad_alloc exception : 전역 연산자 new가 실패할 때 던져진다.
+		int i = 0;
+	while (true)
+	{
+		try {
+			new int[10000000];
+		}
+		catch (exception& e) { //... ellipsis(타원)
+			cout << e.what() << endl;
+			break;
+		}
+		cout << i++ << "할당성공" << endl;
+	}
+	save();
+}
+
+
+========================
+Thu Mar 23 11:38:55 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+// 람다 - 함수의 몸체를 지역에서 정의할 수 있는 이름없는 함수이다. -자신이 정의된 지역에서 만들어진 변수에 접근(읽기 /쓰기)할 수 있다.
+//
+
+
+int main(){
+	vector<int> v{ 1,2,3,4,5 };
+	for (int i = 0; i < v.size(); ++i)
+		cout << v[i] << endl;
+	
+	save();
+}
+
+
+========================
+Thu Mar 23 11:41:13 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+// 람다 - 함수의 몸체를 지역에서 정의할 수 있는 이름없는 함수이다. -자신이 정의된 지역에서 만들어진 변수에 접근(읽기 /쓰기)할 수 있다.
+//
+
+
+int main(){
+	vector<int> v{ 1,2,3,4,5 };
+	cout << v[-1] << endl;
+	cout << v[0] << endl;
+	cout << v[1] << endl;
+	cout << v[2] << endl;
+	cout << v[3] << endl;
+	cout << v[4] << endl;
+	cout << v[5] << endl;
+	
+	save();
+}
+
+
+========================
+Thu Mar 23 11:50:18 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+// 람다 - 함수의 몸체를 지역에서 정의할 수 있는 이름없는 함수이다. -자신이 정의된 지역에서 만들어진 변수에 접근(읽기 /쓰기)할 수 있다.
+//
+
+
+int main(){
+	vector<int> v{ 1,2,3,4,5 };
+	try {
+		for (int i = -10; i < 10; ++i)
+			cout << v.at(i) << endl;
+	}
+	catch (exception& e) {
+		cout << e.what();
+	}
+	save();
+}
+
+
+========================
+Thu Mar 23 11:57:11 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+
+//bad_cast - dynamic cast 실패 시 던져지는 예외
+
+class Animal{
+public:
+	virtual void move()const = 0;
+};
+class Dog:public Animal{
+public:
+	virtual void move() const override { cout << "개가 뛴다" << endl; }
+};
+class Bird:public Animal {
+public:
+	virtual void move() const override { cout << "개가 뛴다" << endl; }
+};
+int main(){
+	Animal* animal[3]{ new Dog,new Bird,new Dog };
+	for (int i = 0; i < 3; ++i)
+		animal[i]->move();
+	save();
+}
+
+
+========================
+Thu Mar 23 12:07:01 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+
+//bad_cast - dynamic cast 실패 시 던져지는 예외
+
+class Animal{
+public:
+	virtual void move()const = 0;
+};
+class Dog:public Animal{
+public:
+	virtual void move() const override { cout << "개가 뛴다" << endl; }
+};
+class Bird:public Animal {
+public:
+	virtual void move() const override { cout << "새가 뛴다" << endl; }
+};
+void f(Animal*);
+int main(){
+	Animal* animal[3]{ new Dog,new Bird,new Dog };
+	for (int i = 0; i < 3; ++i)
+		animal[i]->move();
+	for (int i = 0; i < 3; ++i)
+		f(animal[i]);
+	save();
+}
+void f(Animal* a) {
+	if (dynamic_cast<Dog*>(a) != nullptr)//down casting
+		cout << "반갑다 개야" << endl;
+}
+
+
+========================
+Thu Mar 23 12:16:23 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+
+//bad_cast - dynamic cast 실패 시 던져지는 예외
+
+class Animal{
+public:
+	virtual void move()const = 0;
+};
+class Dog:public Animal{
+public:
+	virtual void move() const override { cout << "개가 뛴다" << endl; }
+};
+class Bird:public Animal {
+public:
+	virtual void move() const override { cout << "새가 뛴다" << endl; }
+};
+void f(const Animal&);
+int main(){
+	Animal* animal[3]{ new Dog,new Bird,new Dog };
+	for (int i = 0; i < 3; ++i)
+		animal[i]->move();
+	for (int i = 0; i < 3; ++i)
+		f(*animal[i]);
+	save();
+}
+void f(const Animal& a) {
+	
+	try {
+		Dog d = dynamic_cast<const Dog&>(a);
+		cout << "반갑다 개야" << endl;
+	}
+	catch(exception& e){
+		cout << e.what() << endl;
+	}
+}
+
+
+========================
+Tue Mar 28 14:04:50 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+
+//호출가능객체(callable type)
+//어떤 객체가 함수호출연산자(function call operator) ()를 사용할 수 있다면 그 객체를 호출가능객체라 한다.
+//
+//1.일반함수
+//2.함수포인터
+//3.함수객체(function object : functor)
+//4.람다
+//5.멤버함수에 대한 포인터
+//6. 바인더(bind)로 생성한 객체
+void f() {
+	cout << "basic function" << endl;
+}
+class test {
+public:
+	void operator()() {
+		cout << "function call operator를 overoading한 class" << endl;
+	}
+	void j() {
+		cout << "test의 멤버함수" << endl;
+	}
+};
+int main(){
+	f();            //1. C만 배웠다. ? f(void) 함수일것이다.
+
+	auto g = f;		//2. g는 ? ?(void) 이런 함수를 가리키는 포인터로 해석;
+	g();			
+
+	test h;			//3. C++만 배웠다. h.operator()()라고 해석할수있다.
+	h();			
+	
+	auto i = []() {	//4.  람다를 auto로 선언한 변수일 수 있다.
+		cout << "람다" << endl; 
+	};
+	i();
+
+	test n;
+	//test* n = new test;
+	void (test::*p)(void) = &test::j;
+	(n.*p)();
+	//(n->*p)();
+
+	save();
+}
+
+
+========================
+Tue Mar 28 14:09:04 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+
+
+int main(){
+	char s[] = "hello, wordl!";
+	sort(begin(s), end(s));
+	cout << s;
+
+	save();
+}
+
+
+========================
+Tue Mar 28 14:10:25 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include <iterator>
+#include <cstddef>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+
+
+int main(){
+	char s[] = "hello, wordl!";
+	sort(begin(s), end(s)-1);
+	cout << s;
+
+	save();
+}
+
+
+========================
+Tue Mar 28 14:47:34 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <vector> //dynamic array(동적배열)
+#include <string>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+
+//어떤 클래스가() 연산자를 오버로딩하면 이 ㅡㅋㄹ래스의 객체를 호출할 수 있다.
+//이 클래스를 함수객체라고 부른다.
+class test {
+	int cnt{ 0 };
+public:
+	bool operator()(char a, char b) {
+		++cnt;
+		return a > b;
+	}
+	int getCnt() const{
+		
+		return cnt;
+	}
+};
+
+int main(){
+	test t;
+	char s[] = "hello, world!";
+	sort(begin(s), end(s) - 1, ref(t));
+	cout << s;
+	cout << t.getCnt();
+	save();
+}
+
+
+========================
+Tue Mar 28 15:09:58 2017
+========================
+#include <iostream>
+#include <utility>
+#include <string>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+
+//pair<> 177p
+//두개의 타일을 하나로 묶는 역할
+//쌍으로 묶어 수행할 일들?
+//이름과 번호, key/value ....
+//스마트포인터 - shared_ptr, unique_ptr
+//시각과 타이머 - 프로그램 시간측정하기 
+
+int main(){
+	//pair
+	pair<string, string> info[100];
+	
+	info[0] = pair<string, string>("트럼프", "215121512412");
+	info[1] = pair<string, string>("아베", "427825462");
+	info[2] = pair<string, string>("시진핑", "2452345624");
+	info[3] = pair<string, string>("메르켈", "52758254");
+	info[4] = pair<string, string>("푸티", "325346236");
+
+	for (auto a : info)
+		cout << a.first;
+	save();
+}
+
+
+========================
+Tue Mar 28 15:11:16 2017
+========================
+#include <iostream>
+#include <utility>
+#include <string>
+#include "save.h"
+#include "model.h"
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+
+//pair<> 177p
+//두개의 타일을 하나로 묶는 역할
+//쌍으로 묶어 수행할 일들?
+//이름과 번호, key/value ....
+//스마트포인터 - shared_ptr, unique_ptr
+//시각과 타이머 - 프로그램 시간측정하기 
+
+int main(){
+	//pair
+	pair<string, string> info[100];
+	
+	info[0] = make_pair("트럼프", "215121512412");
+	info[1] = make_pair<string, string>("아베", "427825462");
+	info[2] = pair<string, string>("시진핑", "2452345624");
+	info[3] = pair<string, string>("메르켈", "52758254");
+	info[4] = pair<string, string>("푸티", "325346236");
+
+	for (auto a : info)
+		cout << a.first;
+	save();
+}
+
+
+========================
+Tue Mar 28 15:20:14 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <utility>
+#include <string>
+#include "save.h"
+#include "model.h"
+
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+
+//pair<> 177p
+//두개의 타일을 하나로 묶는 역할
+//쌍으로 묶어 수행할 일들?
+//이름과 번호, key/value ....
+//스마트포인터 - shared_ptr, unique_ptr
+//시각과 타이머 - 프로그램 시간측정하기 
+
+int main(){
+	//pair
+	pair<string, string> info[5];
+	
+	info[0] = make_pair("트럼프", "215121512412");
+	info[1] = make_pair<string, string>("아베", "427825462");
+	info[2] = pair<string, string>("시진핑", "2452345624");
+	info[3] = pair<string, string>("메르켈", "52758254");
+	info[4] = pair<string, string>("푸티", "325346236");
+
+	sort(begin(info), end(info), [](const pair<string,string>& a, const pair<string,string>& b) {
+		return a.second < b.second;
+	});
+	for (auto a : info)
+		cout << a.first << "  " << a.second << endl;
+	save();
+}
+
+
+========================
+Thu Mar 30 10:55:06 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <utility>
+#include <string>
+#include <vector>
+#include <random>
+#include "save.h"
+#include "model.h"
+
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+using Point2D = pair<int, int>;
+
+
+
+int main(){
+	vector<Point2D> v;
+	
+	//v에 2차원 점을 100개 넣어본다
+	//x,y 좌표값을 -100,100 사이의 값으로 생성
+	default_random_engine dre;
+	uniform_int_distribution<> uni(-100, 100);
+	dre.seed(330);
+	for (int i = 0; i < 100; ++i)
+		v.push_back(Point2D(uni(dre),uni(dre)));
+
+	vector<Point2D>::const_iterator i = v.begin();
+	for (; i < v.end(); ++i)
+		cout << "(" << i->first << "," << i->second << ")" << endl;
+	//for (int i = 0; i < v.size(); ++i)
+	//	cout << "(" << v[i].first << "," << v[i].second << ")" << endl;
+	save();
+}
+
+
+========================
+Thu Mar 30 11:27:58 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <utility>
+#include <string>
+#include <vector>
+#include <random>
+#include "save.h"
+#include "model.h"
+
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+using Point2D = pair<int, int>;
+
+
+Point2D f(const vector<Point2D>& a) {
+	int diff = 50;
+	Point2D tmp {};
+	for (const Point2D& d : a) {
+		if (abs(d.second - 0) < diff) {
+			diff = abs(d.second);
+			tmp = d;
+		}
+	}
+	return tmp;
+}
+int main(){
+	vector<Point2D> v;
+	
+	//v에 2차원 점을 100개 넣어본다
+	//x,y 좌표값을 -100,100 사이의 값으로 생성
+	default_random_engine dre;
+	uniform_int_distribution<> uni(-100, 100);
+	dre.seed(330);
+	for (int i = 0; i < 100; ++i)
+		v.push_back(Point2D(uni(dre),uni(dre)));
+	sort(v.begin(), v.end(), [](const Point2D& a, const Point2D& b) {return a.first > b.first; });
+	vector<Point2D>::const_iterator i = v.begin();
+	for (; i < v.end(); ++i)
+		cout << "(" << i->first << "," << i->second << ")" << endl;
+	//for (int i = 0; i < v.size(); ++i)
+	//	cout << "(" << v[i].first << "," << v[i].second << ")" << endl;
+
+	Point2D a = f(v);//f는 v 에서y좌표가 0에 가장가까운점을 찾아 리턴한다.
+	cout << a.first << " " << a.second << endl;
+	save();
+}
+
+
+========================
+Thu Mar 30 11:54:43 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include <utility>
+#include <string>
+#include <vector>
+#include <random>
+#include "save.h"
+#include "model.h"
+
+//#define size 100
+
+using namespace std;
+// 3 /23
+//3.1.10
+using Point2D = pair<int, int>;
+
+
+Point2D f(const vector<Point2D>& a) {
+	int diff = 50;
+	Point2D tmp {};
+	for (const Point2D& d : a) {
+		if (abs(d.second - 0) < diff) {
+			diff = abs(d.second);
+			tmp = d;
+		}
+	}
+	return tmp;
+}
+int abc{};
+int main(){
+	vector<Point2D> v;
+	
+	//v에 2차원 점을 100개 넣어본다
+	//x,y 좌표값을 -100,100 사이의 값으로 생성
+	default_random_engine dre;
+	uniform_int_distribution<> uni(-100, 100);
+	dre.seed(330);
+	for (int i = 0; i < 100; ++i)
+		v.push_back(Point2D(uni(dre),uni(dre)));
+	sort(v.begin(), v.end(), [](const Point2D& a, const Point2D& b) {return a.first > b.first; });
+	vector<Point2D>::const_iterator i = v.begin();
+	for (; i < v.end(); ++i)
+		cout << "(" << i->first << "," << i->second << ")" << endl;
+	//for (int i = 0; i < v.size(); ++i)
+	//	cout << "(" << v[i].first << "," << v[i].second << ")" << endl;
+
+	Point2D a = f(v);//f는 v 에서y좌표가 0에 가장가까운점을 찾아 리턴한다.
+	cout << a.first << " " << a.second << endl;
+
+	auto p = min_element(v.begin(), v.end(), [](const Point2D& a, const Point2D& b) {
+		return a.second < b.second;
+	});
+	cout << p->first << " " << p->second << endl;
+	save();
+}
+
+
+========================
+Thu Mar 30 12:00:08 2017
+========================
+#include <iostream>
+#include "save.h"
+#include "model.h"
+
+//#define size 100
+
+using namespace std;
+
+void f() {
+	cout << "basic function" << endl;
+
+}
+int main(){
+	int* p = (int*)f;
+	((int(*)(void))p)();
+	save();
+}
+
+
+========================
+Tue Apr  4 13:51:40 2017
+========================
+#include <iostream>
+#include <memory>
+#include "save.h"
+#include "model.h"
+
+//#define size 100
+
+using namespace std;
+// 스마트 포인터 - unique ptr(자원을 소유하는 포인터)
+// 자원(귀중한 것)
+//1.자원을 확보한다.(new)
+//2.확보한 자원을 사용한다.
+//3.자원을 돌려준다.(delete)
+
+//unique_ptr은 크기가 일반 포인터와 같음을 보장한다.
+//1. delete를 어디서 언제해야하는지 잊기 쉽다.
+//2. new와 delete 사이에 예외가 발생하면 대책이 없다.
+class u_ptr {
+	Model* ptr;
+public:
+	u_ptr(Model* p):ptr(p){}
+	u_ptr(const u_ptr& other) = delete;
+	~u_ptr() {
+		delete ptr;
+	}
+};
+int main(){
+	u_ptr p(new Model);
+	//u_ptr q = p;
+	try {
+		throw 333;
+	}
+	catch (...) {
+		//exit(0);
+	}
+
+	save();
+}
+
+
+========================
+Tue Apr  4 13:59:41 2017
+========================
+#include <iostream>
+#include <memory>
+#include "save.h"
+#include "model.h"
+
+//#define size 100
+
+using namespace std;
+// 스마트 포인터 - unique ptr(자원을 소유하는 포인터)
+// 자원(귀중한 것)
+//1.자원을 확보한다.(new)
+//2.확보한 자원을 사용한다.
+//3.자원을 돌려준다.(delete)
+
+//unique_ptr은 크기가 일반 포인터와 같음을 보장한다.
+//1. delete를 어디서 언제해야하는지 잊기 쉽다.
+//2. new와 delete 사이에 예외가 발생하면 대책이 없다.
+void f() { unique_ptr<Model> p(new Model); throw 33;}
+int main(){
+	try {
+		f();
+
+	}
+	catch (int n) {
+		cout << "예외" << n << endl;
+	}
+
+	save();
+}
+
+
+========================
+Tue Apr  4 13:59:57 2017
+========================
+#include <iostream>
+#include <memory>
+#include "save.h"
+#include "model.h"
+
+//#define size 100
+
+using namespace std;
+// 스마트 포인터 - unique ptr(자원을 소유하는 포인터)
+// 자원(귀중한 것)
+//1.자원을 확보한다.(new)
+//2.확보한 자원을 사용한다.
+//3.자원을 돌려준다.(delete)
+
+//unique_ptr은 크기가 일반 포인터와 같음을 보장한다.
+//1. delete를 어디서 언제해야하는지 잊기 쉽다.
+//2. new와 delete 사이에 예외가 발생하면 대책이 없다.
+void f() { Model* p = new Model; throw 33; delete p; }
+int main(){
+	try {
+		f();
+
+	}
+	catch (int n) {
+		cout << "예외" << n << endl;
+	}
+
+	save();
+}
+
+
+========================
+Tue Apr  4 14:11:11 2017
+========================
+#include <iostream>
+#include <memory>
+#include "save.h"
+#include "model.h"
+
+//#define size 100
+
+using namespace std;
+// 스마트 포인터 - unique ptr(자원을 소유하는 포인터)
+// 자원(귀중한 것)
+//1.자원을 확보한다.(new)
+//2.확보한 자원을 사용한다.
+//3.자원을 돌려준다.(delete)
+
+//unique_ptr은 크기가 일반 포인터와 같음을 보장한다.
+//1. delete를 어디서 언제해야하는지 잊기 쉽다.
+//2. new와 delete 사이에 예외가 발생하면 대책이 없다.
+
+class u_ptr {
+	Model* ptr;
+public:
+	u_ptr(Model* p) :ptr(p) {}
+	u_ptr(const u_ptr& other) = delete;
+	~u_ptr() {
+		delete ptr;
+	}
+};
+int main(){
+	unique_ptr<Model,void(*)(Model*)> p(new Model[10], [](Model* p) {delete[] p; });
+	save();
+}
+
+
+========================
+Tue Apr  4 14:58:27 2017
+========================
+#include <iostream>
+#include <memory>
+#include "save.h"
+#include "model.h"
+
+//#define size 100
+
+using namespace std;
+// 스마트 포인터 - unique ptr(자원을 소유하는 포인터)
+// 자원(귀중한 것)
+//1.자원을 확보한다.(new)
+//2.확보한 자원을 사용한다.
+//3.자원을 돌려준다.(delete)
+
+//unique_ptr은 크기가 일반 포인터와 같음을 보장한다.
+//1. delete를 어디서 언제해야하는지 잊기 쉽다.
+//2. new와 delete 사이에 예외가 발생하면 대책이 없다.
+
+class u_ptr {
+	Model* ptr;
+public:
+	u_ptr(Model* p) :ptr(p) {}
+	u_ptr(const u_ptr& other) = delete;
+	~u_ptr() {
+		delete ptr;
+	}
+};
+int main(){
+	unique_ptr<Model,void(*)(Model*)> p(new Model[10], [](Model* p) {delete[] p; });
+	save();
+}
+
+
+========================
+Tue Apr 11 13:36:34 2017
+========================
+#include <iostream>
+#include <algorithm>
+#include<utility>
+#include "save.h"
+#include "model.h"
+//#define size 100
+using namespace std;
+int main() {
+	int a[]{ 1,2,4,5,3 };
+	//a의 최대값과 최소값을 minmax 함수로 찾을 수 있다.
+	pair<int, int> p = minmax({ -4,2,5,72,254 }); //begin 과 end는 포인터로 넘어온다.
+	cout << p.first << " " << p.second << endl;
+	save();
+}
+
+
+========================
+Tue Apr 11 13:57:40 2017
+========================
+#include <iostream>
+#include <random>
+#include <algorithm>
+#include <chrono>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//함수객체나 람다는 과연 함수보다 속도가 빠른가?
+//정수 10000000개를 만들어 정렬해서 속도를 비교해보자
+class Test{
+public:
+	bool operator()(int a, int b) {
+		return a < b;
+	}
+};
+const int number = 1000000;
+int n[number];
+int main() {
+	default_random_engine dre;
+	uniform_int_distribution<> ui;
+	
+	for (int i = 0; i < number; ++i)
+		n[i] = ui(dre);
+
+	auto start = chrono::system_clock::now();
+
+	//sort(begin(n), end(n), [](int a, int b) {return a < b; }); // 람다
+	sort(begin(n), end(n), Test()); // 함수 객체
+	// 인라인화
+
+	auto end = chrono::system_clock::now();
+	auto diff = end - start;
+	auto msec = chrono::duration_cast<chrono::milliseconds>(diff);
+	cout << "경과시간 - " << msec.count() << "mSec" << endl;
+	save();
+
+}
+
+
+========================
+Tue Apr 11 15:05:10 2017
+========================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//6. Standard Templete Liblary
+int main() {
+
+	vector<int> v;
+
+	cout << v.size() << endl;	  //현재 갖고 있는 원소의 개수
+	cout << v.capacity() << endl; //재할당 하지 않고 담을 수 있는 원소수
+	cout << v.max_size() << endl; //물리적으로 연속된 메모리에 담을 수 있는 최대 개수
+	cout << v.data() << endl;	  //힙에 할당한 주소
+
+	save();
+}
+
+
+========================
+Tue Apr 11 15:15:00 2017
+========================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//6. Standard Templete Liblary
+int main() {
+
+	vector<int> v;
+	// 메모리를 미리 잡아준다면 재할당을 하는 비용 소모가 없어진다.
+	v.reserve(5000);
+	//vector의 재할당을 관찰
+	for (int i = 0; i < 10000; ++i) {
+		v.push_back(i);
+		if (v.size() == v.capacity())
+			cout << v.capacity() << endl;
+	}
+	save();
+
+}
+
+
+========================
+Thu Apr 13 10:42:04 2017
+========================
+#include <iostream>
+#include <random>
+#include <set>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//6. Standard Templete Liblary
+int main() {
+
+	set<int> s;
+
+	default_random_engine dre;
+	uniform_int_distribution<> ui;
+	
+	while (true) {
+		s.insert(ui(dre));
+		if (s.size() == 20000)
+			break;
+	}
+	for (auto d : s)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu Apr 13 10:47:38 2017
+========================
+#include <iostream>
+#include <deque>
+#include <set>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//deque의 앞쪽에 원소들을 넣어보고 출력
+int main() {
+
+	deque<int> d;
+	for (int i = 0; i < 6; ++i)
+		if (i % 2 == 0)
+			d.push_front(i);
+		else
+			d.push_back(i);
+	for (auto d : d)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu Apr 13 10:56:48 2017
+========================
+#include <iostream>
+#include <array>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//array : 만들 때 크기가 고정되는 유일한 컨테이너
+//정수 10개를 담는 array
+int main() {
+	array<int, 10> a{1,2,3};
+	for (auto d : a)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu Apr 13 10:59:05 2017
+========================
+#include <iostream>
+#include <array>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//array : 만들 때 크기가 고정되는 유일한 컨테이너
+//정수 10개를 담는 array
+int main() {
+	array<int, 10> a{1,2,3};
+	
+	for (int i = 0; i < 10; ++i)
+		cout << a.operator[](i);
+	cout << endl;
+	save();
+}
+
+
+========================
+Thu Apr 13 11:05:32 2017
+========================
+#include <iostream>
+#include <array>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//array : 만들 때 크기가 고정되는 유일한 컨테이너
+//정수 10개를 담는 array
+int main() {
+	array<int, 10> a{1,2,3,4,5,6,7,8,9,10};
+	for (auto i = a.cbegin() ; i < a.cend(); ++i)
+		cout << *i << endl;
+	save();
+}
+
+
+========================
+Thu Apr 13 11:38:09 2017
+========================
+#include <iostream>
+#include <list>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//list에 'a' ~ 'z' 까지 원소를 담고 출력
+int main() {
+	list<char> l;
+
+	for (char c = 'a'; c <= 'z'; ++c)
+		l.insert(l.end(), c);
+	for (auto d : l)
+		cout << d;
+	save();
+}
+
+
+========================
+Thu Apr 13 11:40:02 2017
+========================
+#include <iostream>
+#include <list>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//list에 'a' ~ 'z' 까지 원소를 담고 출력
+int main() {
+	list<char> l;
+
+	for (char c = 'a'; c <= 'z'; ++c)
+		l.insert(l.end(), c);
+	while (!l.empty()) {
+		cout << l.front() << endl;
+		l.pop_front();
+	}
+	cout << l.size() << endl;
+	save();
+}
+
+
+========================
+Thu Apr 13 11:58:17 2017
+========================
+#include <iostream>
+#include <set>
+#include <iterator>
+#include <string>
+#include <algorithm>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//키보드에서 원하는 만큼 단어를 입력받은후 정렬하여 출력
+int main() {
+	set<string> s;
+	copy(istream_iterator<string>(cin), istream_iterator<string>(), inserter(s, s.begin())); //(시작, 끝 ,목적지)
+
+	for (auto i = s.cbegin(); i != s.cend(); ++i)
+		cout << *i << endl;
+	save();
+}
+
+
+========================
+Thu Apr 13 12:15:52 2017
+========================
+#include <iostream>
+#include <map>
+#include <string>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//map : Key/Value의 pair를 원소로 갖는다.
+int main() {
+	map<string, int> m{ make_pair("쵸파",1000) };
+	m.insert(pair<string, int>("루피", 40000));
+	m.insert(pair<string, int>("시저크라운", 352326));
+	m.insert(pair<string, int>("갱뱃지", 6362));
+	m["우솝"] = 255000;
+
+	for (auto i = m.begin(); i != m.end(); ++i)
+		cout << i->first << " " << i->second << endl;
+	save();
+}
+
+
+========================
+Tue Apr 18 13:45:16 2017
+========================
+#include <iostream>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+int main() {
+	vector<Model> v;
+	v.reserve(10);
+	for (int i = 0; i < 11; ++i)
+		v.push_back(Model());
+	cout << sizeof(v) << endl;
+	cout << "현재 원소의 수" << v.size() << endl;
+	cout << "재할당 전 담을수 있는 수" << v.capacity() << endl;
+	cout << "힙 메모리 주소" << v.data() << endl;
+	save();
+}
+
+
+========================
+Tue Apr 18 14:03:13 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <set>
+#include "save.h"
+#include "model.h"
+using namespace std;
+int main() {
+
+	string fname("소스.cpp");
+	ifstream in(fname);
+	string s;
+	vector<string> v;
+	while(in >> s)
+		v.push_back(s);
+	sort(v.begin(), v.end());
+	for (int i = 0; i < v.size(); ++i)
+		cout << v[i] << endl;
+	save();
+}
+
+
+========================
+Tue Apr 18 14:08:00 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <algorithm>
+#include <string>
+#include <set>
+#include "save.h"
+#include "model.h"
+using namespace std;
+int main() {
+
+	
+	ifstream in("소스.cpp");
+	string s;
+	set<string> v;
+	while (in >> s)
+		v.insert(s);
+	
+	for (const string& d : v)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Tue Apr 18 14:17:36 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <map>
+#include "save.h"
+#include "model.h"
+using namespace std;
+int main() {
+
+	ifstream in("소스.cpp");
+	string s;
+	map<string,int> m;
+	while (in >> s)
+		m[s]++;
+	for (const auto& d : m)
+		cout << d.first << " " << d.second << endl;
+	save();
+}
+
+
+========================
+Tue Apr 18 14:33:55 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <array>
+#include "save.h"
+#include "model.h"
+using namespace std;
+int main() {
+	array<Model, 3> a; // 스택에 잡힌다.
+	array<Model, 30> b;
+	cout << a.size() << endl;
+	cout << b.size() << endl;
+	save();
+}
+
+
+========================
+Tue Apr 18 14:52:18 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//p236 int [] , string
+//단어를 입력받아 각 문자의 값을 1증가시켜 출력
+int main() {
+	
+		cout << "단어를 입력 : ";
+		string s;
+		cin >> s;
+		reverse(s.begin(), s.end());
+		cout << s << endl;
+		for (auto i = s.rbegin(); i < s.rend(); ++i)
+			cout << *i;
+		cout << endl;
+	
+		save();
+}
+
+
+========================
+Tue Apr 18 14:55:36 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <stack>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+//p237
+//Model을 stack으로 관리해보자
+int main() {
+	stack<Model> s;
+	s.push(Model(333));
+	s.push(Model(666));
+	s.pop();
+	cout << "!%!%" << endl;
+	save();
+}
+
+
+========================
+Tue Apr 18 15:17:53 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include "save.h"
+#include "model.h"
+using namespace std;
+//6.3 반복자(iterator)
+//반복자의 기본연산
+//* (역 참조연산자)
+//++(증가연산자)
+//==(비교연산자)
+//= (할당연산자)
+// 반복자 구간을 인자로 주면
+// 그 내용을 꼭 출력해주는 함수를 만들 수 있을 것 같다.
+// 다음 main()이 잘 실행되도록 해 보자
+template<class Iter>
+void print(Iter begin, Iter end)
+{
+	while (begin != end) {
+		cout << *begin++ << endl;
+	}
+	
+}
+int main() {
+	string s("Goodbye, world!");
+
+	print(s.begin(), s.end());
+
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+	print(v.begin(), v.end());
+
+	int a[5] = { 1,2,3,4,5 };
+	print(&a[0], &a[5]);
+
+	save();
+}
+
+
+========================
+Thu Apr 20 10:50:56 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <string>
+#include <list>
+#include <set>
+#include "save.h"
+#include "model.h"
+//반복자의 종류
+//1.순방향(forward) - 앞으로만 갈 수 있음
+//2.양방향(bidirectional)
+//3.랜덤(random) - 메모리가 물리적으로 연속됨
+//- 입력(input)
+//- 출력(output)
+using namespace std;
+int main() {
+	list<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+	for (auto i = v.begin(); i != v.end(); ++(++i))
+		cout << *i << endl;
+	save();
+}
+
+
+========================
+Thu Apr 20 11:07:38 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <list>
+#include <set>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+
+int main() {
+	vector<int> t{ 2,5,4,1,6,3 };
+	//최소값을 찾아서 출력
+	auto pos = min_element(t.cbegin(), t.cend());
+
+	cout << "최소값" << *pos << endl;
+	save();
+}
+
+
+========================
+Thu Apr 20 11:16:06 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <list>
+#include <set>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter>
+Iter min_Element(Iter b, Iter e) {
+	Iter min = b;
+	while (b != e) {
+		if (*b < *min)
+			min = b;
+		++b;
+	}
+	return min;
+
+
+}
+int main() {
+	vector<int> t{ 2,5,4,1,6,3 };
+	//최소값을 찾아서 출력
+	auto pos = min_Element(t.cbegin(), t.cend());
+
+	cout << "최소값" << *pos << endl;
+	save();
+}
+
+
+========================
+Thu Apr 20 11:16:24 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <list>
+#include <set>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter>
+Iter min_Element(Iter b, Iter e) {
+	Iter min = b;
+	while (b != e) {
+		if (*b < *min)
+			min = b;
+		++b;
+	}
+	return min;
+
+
+}
+int main() {
+	set<int> t{ 2,5,4,1,6,3 };
+	//최소값을 찾아서 출력
+	auto pos = min_Element(t.cbegin(), t.cend());
+
+	cout << "최소값" << *pos << endl;
+	save();
+}
+
+
+========================
+Thu Apr 20 11:36:22 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <list>
+#include <set>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter>
+Iter find(Iter b, Iter e,int input) {
+	Iter tmp = b;
+	while (b != e) {
+		if (input == *b)
+			return b;
+		++b;
+	}
+	cout << "찾고자 하는 값이 없습니다." << endl;
+}
+int main() {
+	vector<int> t{ 2,5,4,1,6,3 };
+	//최소값을 찾아서 출력
+	cout << "찾을 값을 입력 : ";
+	int input;
+	cin >> input;
+
+	auto pos = find(t.cbegin(), t.cend(),input);
+
+	save();
+}
+
+
+========================
+Thu Apr 20 11:38:37 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <list>
+#include <set>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter>
+Iter find(Iter b, Iter e,int input) {
+	Iter tmp = b;
+	while (b != e) {
+		if (input == *b)
+			return b;
+		++b;
+	}
+	return e;
+}
+int main() {
+	vector<int> t{ 2,5,4,1,6,3 };
+	//최소값을 찾아서 출력
+	cout << "찾을 값을 입력 : ";
+	int input;
+	cin >> input;
+
+	auto pos = find(t.cbegin(), t.cend(),input);
+	if (pos != t.end())
+		cout << "찾았다" << endl;
+	else
+		cout << "찾고자 하는 값이 없습니다." << endl;
+		
+	save();
+}
+
+
+========================
+Thu Apr 20 12:02:39 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <list>
+#include <iterator>
+#include <set>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter1, class Iter2>
+void myCopy(Iter1 b, Iter1 e, Iter2 lb) {
+	for (; b != e; ++b,++lb)
+		*lb = *b;
+}
+int main() {
+	vector<int> t{ 2,5,4,1,6,3 };
+	//list<int> l;
+	list<int> l(t.size());
+	//벡터의 내용을 리스트로 복사
+	myCopy(t.cbegin(), t.cend(), l.begin() );
+	for (int d : l)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu Apr 20 12:16:49 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <list>
+#include <iterator>
+#include <set>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter1, class Iter2>
+void myCopy(Iter1 b, Iter1 e, Iter2 lb) {
+	for (;b != e;)
+		*lb++ = *b++;
+}
+int main() {
+	string s("2017. 4. 20. C++ STL");
+	set<char> ss(s.begin(),s.end());
+	//copy 알고리즘으로 set에 s를 복사하시오.
+	//myCopy(s.begin(), s.end(), ss.begin());
+	//copy(s.begin(), s.end(), insulter(ss,ss.begin()));
+	for (auto d : ss)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu Apr 20 12:18:06 2017
+========================
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <list>
+#include <iterator>
+#include <set>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter1, class Iter2>
+void myCopy(Iter1 b, Iter1 e, Iter2 lb) {
+	for (;b != e;)
+		*lb++ = *b++;
+}
+int main() {
+	string s("2017. 4. 20. C++ STL");
+		char c[100];
+	
+	myCopy(s.begin(), s.end(), c);
+	//copy(s.begin(), s.end(), insulter(ss,ss.begin()));
+	for (auto d : c)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu Apr 27 11:47:28 2017
+========================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter1, class Iter2>
+void myCopy(Iter1 b, Iter1 e, Iter2 lb) {
+	while (b != e)
+		*lb++ = *b++;
+}
+int main() {
+	string s("2017. 4. 20. C++ STL");
+	char c[100] = {};
+	
+	myCopy(s.begin(), s.end(), c);
+	//copy(s.begin(), s.end(), insulter(ss,ss.begin()));
+	for (auto d : c)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu Apr 27 11:50:39 2017
+========================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter1>
+void myCopy(Iter1 b, Iter1 e, vector<char> v) {
+	while (b != e)
+		v.push_back(*b++);
+}
+int main() {
+	string s("2017. 4. 20. C++ STL");
+	vector<char> v;
+	
+	myCopy(s.begin(), s.end(), v);
+	//copy(s.begin(), s.end(), insulter(ss,ss.begin()));
+	for (auto d : v)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu Apr 27 12:00:50 2017
+========================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter1, class Iter2>
+void myCopy(Iter1 b, Iter1 e, Iter2 lb) {
+	while (b != e)
+		*lb++ = *b++;
+}
+int main() {
+	string s("2017. 4. 20. C++ STL");
+	vector<char> v;
+	v.reserve(s.size());
+	
+	myCopy(s.begin(), s.end(), v.begin());
+	auto p = v.data();
+	cout << *p++ << endl;
+	save();
+}
+
+
+========================
+Thu Apr 27 12:03:40 2017
+========================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter1, class Iter2>
+void myCopy(Iter1 b, Iter1 e, Iter2 lb) {
+	while (b != e)
+		*lb++ = *b++;
+}
+int main() {
+	string s("2017. 4. 20. C++ STL");
+	vector<char> v;
+	v.resize(s.size());
+	
+	myCopy(s.begin(), s.end(), v.begin());
+	for (auto d : v)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu Apr 27 12:14:12 2017
+========================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter1, class Iter2>
+void myCopy(Iter1 b, Iter1 e, Iter2 lb) {
+	while (b != e)
+		*lb++ = *b++;
+}
+int main() {
+	string s("2017. 4. 20. C++ STL");
+	vector<char> v;
+	//v.resize(s.size());
+
+	//목적지에 공간이 없더라도 복사가 필요
+	//공간이 없다면 스스로 공간을 확보하며서 원소를 복사
+	//copy 알고리즘의 인자는 반복자만 가능
+	//겉 모습은 반복자이지만 내부에서는 전혀 다른 일을 하는 객체를 이용한다.
+	
+	myCopy(s.begin(), s.end(), back_inserter(v));
+	for (char d : v)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu Apr 27 12:18:31 2017
+========================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+template<class Iter1, class Iter2>
+void myCopy(Iter1 b, Iter1 e, Iter2 lb) {
+	while (b != e)
+		*lb++ = *b++;
+}
+int main() {
+	vector<char> v;
+	auto p = back_inserter(v); // 반복자어댑터(삽입반복자)
+	p.operator=('a');
+	p.operator=('b');
+	p.operator=('c');
+	for (char d : v)
+		cout << d << " ";
+	save();
+}
+
+
+========================
+Tue May  2 14:38:15 2017
+========================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <list>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+
+template<class iter1, class iter2>
+void mycopy(iter1 b, iter1 e, iter2 lb) {
+	while (b != e) {
+		*lb = *b;
+		lb++;
+		b++;
+	}
+}
+//my_back_inserter<iter> back_inserter(_Container& _Cont)
+//{	
+//	return (my_back_inserter<iter>(_Cont));
+//}
+template<class cont, class value>
+class my_back_inserter {
+	cont* it;
+public:
+	my_back_inserter(cont& i) {
+		it = &i; 
+	}
+	my_back_inserter& operator*() { return *this; }
+	void operator=(value n) { it->push_back(n); }
+	void operator++() { }
+	void operator++(int) { }
+};
+int main() {
+	//vector<int> v{ 1,2,3,4,5 };
+	vector<string> v{ "2017", "STL" };
+	//list<int> l;
+	list<string> l;
+	
+	
+	mycopy(v.begin(), v.end(), my_back_inserter<list<string>, string>(l));
+	list<string>::iterator iter;
+	for (iter = l.begin(); iter != l.end(); ++iter)
+		cout << *iter << endl;
+	save();
+}
+
+
+========================
+Tue May  2 15:12:19 2017
+========================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+bool check(int n) {
+	if (n % 3 == 0) return true;
+	else return false;
+}
+
+// 6.7 알고리즘 조작
+int main() {
+	vector<int> v{ 1,2,3,4,5,6,7,8,9 };
+	//v 에서 3의배수 삭제
+	//remove()사용
+	for (int i = 0; i < v.size(); ++i)
+		cout << v[i] << " ";
+	cout << endl;
+	auto p = remove_if(v.begin(), v.end(), [](int a) {
+		return (a % 3 == 0);
+	});
+	v.erase(p, v.end());
+	for (int i = 0; i < v.size(); ++i)
+		cout << v[i] << " ";
+	save();
+}
+
+
+========================
+Thu May  4 12:17:56 2017
+========================
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+
+using namespace std;
+
+//7장. STL 컨테이너
+// 컨테이너의 공통동작과 표의내용
+int main() {
+	//307 표 - 모든컨테이너가 지원하는 연산
+	//contType c      필요 기본생성자, 어떠한 요소도 갖지않는 빈 컨테이너를 만든다.
+	vector<int> v;
+	//contType c(c2)  필요 복사생성자
+	vector<int> v2(v);
+	//contType c = c2 필요 복사생성자
+	vector<int> v3 = v2;
+	//contType c(begin,end)컨테이너를 생성해 [beging, end)의 요소를 복사
+	vector<int> v4 {1,2,3,4,5};
+	vector<int> v5(v4.begin(), v4.end());
+	//vector<int> v6{ istream_iterator<int>(cin), istream_iterator<int>() };
+	//contType c(initlist)컨테이너를 생성하고 초기화자 목록으로 초기화
+	vector<int> v7({ 1, 2, 3, 4, 5, 6, 7 });
+	//c,~contType() 할 수 있다면 모든 요소를 삭제하고 메모리를 풀어줌
+	v7.~vector();
+	cout << v7.size() << endl;
+	cout << v7.data() << endl;
+	//c.empty()
+	//c.size()
+	//c.max_size()
+	cout << v7.max_size() << endl;
+	//c1 == c2
+	vector<int> v8{ 1,2,3 };
+	vector<int> v9{ 3,2,1 };
+	if (v8 == v9)
+		cout << "True" << endl;
+	//c = initlist initlist내의 모든 요소를 할당
+	vector<int> v10({ 1,2,3,4,5,6,7,8 });
+	cout << v10.size() << endl;
+	cout << v10.capacity() << endl;
+	cout << v10.data() << endl;
+	v10 = { 1,3,5,6,7 };
+	cout << v10.size() << endl;
+	cout << v10.capacity() << endl;
+	cout << v10.data() << endl;
+	//c1.swap(c2) c1과 c2의 데이터를 교환
+	v10.swap(v9);
+	cout << v10.size() << endl;
+	cout << v10.capacity() << endl;
+	cout << v10.data() << endl;
+	
+	cout << v9.size() << endl;
+	cout << v9.capacity() << endl;
+	cout << v9.data() << endl;
+	save();
+}
+
+
+========================
+Thu May 11 10:55:08 2017
+========================
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <list>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+
+template<class iter1, class iter2>
+void mycopy(iter1 b, iter1 e, iter2 lb) {
+	while (b != e) {
+		*lb = *b;
+		lb++;
+		b++;
+	}
+}
+
+template<class cont>
+class back {
+	cont* it;
+public:
+	back(cont& i) {
+		it = &i;
+	}
+	void operator++() { }
+	void operator++(int) { }
+	back& operator*() { return *this; }
+	void operator=(typename cont::value_type n) { it->push_back(n); }
+};
+int main() {
+	//vector<int> v{ 1,2,3,4,5 };
+	vector<string> v{ "2017", "STL" };
+	//list<int> l;
+	list<string> l;
+
+
+	mycopy(v.begin(), v.end(), back<list<string>>(l));
+	list<string>::iterator iter;
+	for (iter = l.begin(); iter != l.end(); ++iter)
+		cout << *iter << endl;
+	save();
+}
+
+
+========================
+Thu May 11 11:06:45 2017
+========================
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+int main() {
+	array<int, 10> a;
+	a.fill(0);
+	cout << sizeof(a) << endl;
+	for (int i = 0; i < 10; ++i)
+		cout << a[i] << endl;
+	save();
+}
+
+
+========================
+Thu May 11 11:10:16 2017
+========================
+
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include <string>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+int main() {
+	array<int, 10> a;
+	a.fill(0);
+	array<int, 10> b;
+
+	swap(a, b);
+	for (int i = 0; i < 10; ++i) {
+		cout << a[i] << endl;
+		cout << b[i] << endl;
+	}
+	save();
+}
+
+
+========================
+Thu May 11 11:33:14 2017
+========================
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <string>
+#include "save.h"
+#include "model.h"
+//
+using namespace std;
+int main() {
+	vector<Model> v;
+	
+	v.emplace_back(1234);
+	save();
+}
+
+
+========================
+Thu May 11 11:45:20 2017
+========================
+
+#include <iostream>
+#include <list>
+#include<algorithm>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+// unique
+// splice
+// sort
+// merge
+using namespace std;
+int main() {
+	list<int> l{ 1,6,6,23,2,7,2,4,6,43,2 };
+	l.sort([](int& a, int& b) {return a < b; });
+	for (auto d : l)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu May 11 11:45:35 2017
+========================
+
+#include <iostream>
+#include <list>
+#include<algorithm>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+// unique
+// splice
+// sort
+// merge
+using namespace std;
+int main() {
+	list<int> l{ 1,6,6,23,2,7,2,4,6,43,2 };
+	l.unique();
+	for (auto d : l)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu May 11 11:47:05 2017
+========================
+
+#include <iostream>
+#include <list>
+#include<algorithm>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+// unique
+// splice
+// sort
+// merge
+using namespace std;
+int main() {
+	list<int> l{ 1,6,6,23,2,7,2,4,6,43,2 };
+	l.sort();
+	l.unique();
+	for (auto d : l)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu May 11 11:56:11 2017
+========================
+
+#include <iostream>
+#include <list>
+#include<algorithm>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+// unique
+// splice
+// sort
+// merge
+using namespace std;
+int main() {
+	list<int> l1{ 1,2,3,7,8,9};
+	list<int> l2{ 4,5,6 };
+	auto p = find(l1.begin(), l1.end(), 7);
+	l1.splice(p, l2);
+	for (auto d : l1)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu May 11 11:56:30 2017
+========================
+
+#include <iostream>
+#include <list>
+#include<algorithm>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+// unique
+// splice
+// sort
+// merge
+using namespace std;
+int main() {
+	list<int> l1{ 1,2,3,7,8,9};
+	list<int> l2{ 6,5,4 };
+	l1.merge(l2);
+	for (auto d : l1)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu May 11 11:58:30 2017
+========================
+
+#include <iostream>
+#include <list>
+#include<algorithm>
+#include <iterator>
+#include "save.h"
+#include "model.h"
+// unique
+// splice
+// sort
+// merge
+using namespace std;
+int main() {
+	list<int> l1{1,3,5,7,9};
+	list<int> l2{ 8,6,4,2 };
+	l1.merge(l2);
+	for (auto d : l1)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu May 11 12:18:14 2017
+========================
+
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class X {
+public:
+	bool operator()(int a, int b) { return a > b; }
+};
+// strict weak ordering - set이 순위를 매기는 법
+// <연산자 하나로만 순서를 정하는 방법
+// 1. x < y 가 참이면 y < x 는 거짓
+// 2. x < y 가 참이고 y < z 가 참이면 x < z 는 참
+// 3. x < x 는 언제나 거짓
+int main() {
+	//set<int, greater<int>> s{ 1, 3, 5, 2, 4 };
+	set<int, X> s{ 1, 3, 5, 2, 4 };
+	for (auto d : s)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Tue May 16 14:17:34 2017
+========================
+
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class X {
+public:
+	bool operator()(const Model& a, const Model& b) { cout << a.getdata() << " > " << b.getdata() << endl; return a.getdata() > b.getdata(); }
+};
+
+int main() {
+	set<Model, X> s;
+	Model a(100);
+	Model b(300);
+	Model c(200);
+	s.insert(a);
+	s.insert(b);
+	s.insert(c);
+
+	
+	for (auto d : s)
+		d.show();
+	save();
+}
+
+
+========================
+Tue May 16 14:41:03 2017
+========================
+
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class X {
+public:
+	bool operator()(const Model& a, const Model& b) const { cout << a.getdata() << " > " << b.getdata() << endl; return a.getdata() > b.getdata(); }
+};
+
+int main() {
+	set<Model, X> s;
+	Model a(100);
+	Model b(300);
+	Model c(200);
+	s.insert(a);
+	s.insert(b);
+	s.insert(c);
+
+	if (s.end() == s.find(c))
+		;
+	else
+		cout << "찾았다." << endl;
+
+	for (auto d : s)
+		d.show();
+	save();
+}
+
+
+========================
+Tue May 16 14:43:36 2017
+========================
+
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class X {
+public:
+	bool operator()(const Model& a, const Model& b) const { 
+		cout << " comp " << endl; 
+		return a.getdata() > b.getdata(); 
+	}
+};
+
+int main() {
+	set<Model, X> s;
+	Model a(100);
+	Model b(300);
+	Model c(200);
+	s.insert(a);
+	s.insert(b);
+	s.insert(c);
+
+	if (s.end() == s.find(c))
+		;
+	else
+		cout << "찾았다." << endl;
+
+	for (auto d : s)
+		d.show();
+	save();
+}
+
+
+========================
+Tue May 16 14:43:58 2017
+========================
+
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class X {
+public:
+	bool operator()(const Model& a, const Model& b) const { 
+		cout << " comp " << endl; 
+		return a.getdata() > b.getdata(); 
+	}
+};
+
+int main() {
+	set<Model, X> s;
+	Model a(100);
+	Model b(300);
+	Model c(200);
+	s.insert(a);
+	s.insert(b);
+	s.insert(c);
+
+	if (s.end() == s.find(c))
+		;
+	else
+		cout << "찾았다." << endl;
+
+	for (auto d : s)
+		d.show();
+	save();
+}
+
+
+========================
+Tue May 16 14:46:45 2017
+========================
+
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class X {
+public:
+	bool operator()(const Model& a, const Model& b) const { 
+		cout << " comp " << endl; 
+		return a.getdata() > b.getdata(); 
+	}
+};
+
+int main() {
+	set<Model, X> s;
+	Model a(100);
+	Model b(300);
+	Model c(200);
+	s.insert(a);
+	s.insert(b);
+	s.insert(c);
+
+	if (s.end() == s.find(c))
+		;
+	else
+		cout << "찾았다." << endl;
+
+	for (auto d : s)
+		d.show();
+	save();
+}
+
+
+========================
+Tue May 16 14:51:04 2017
+========================
+
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class X {
+public:
+	bool operator()(const Model& a, const Model& b) const { 
+		cout << " comp " << endl; 
+		return a.getdata() > b.getdata(); 
+	}
+};
+
+int main() {
+	set<Model, X> s;
+	Model a(100);
+	Model b(300);
+	Model c(200);
+	s.insert(a);
+	s.insert(b);
+	s.insert(c);
+
+	if (s.end() == s.find(c))
+		;
+	else
+		cout << "찾았다." << endl;
+
+	for (auto d : s)
+		d.show();
+	save();
+}
+
+
+========================
+Tue May 16 14:51:31 2017
+========================
+
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class X {
+public:
+	bool operator()(const Model& a, const Model& b) const { 
+		cout << " comp " << endl; 
+		return a.getdata() > b.getdata(); 
+	}
+};
+
+int main() {
+	set<Model, X> s;
+	Model a(100);
+	Model b(300);
+	Model c(200);
+	s.insert(a);
+	s.insert(b);
+	s.insert(c);
+
+	if (s.end() == s.find(c))
+		;
+	else
+		cout << "찾았다." << endl;
+
+	for (auto d : s)
+		d.show();
+	save();
+}
+
+
+========================
+Tue May 16 15:02:13 2017
+========================
+
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class X {
+public:
+	bool operator()(const Model& a, const Model& b) const { 
+		cout << " comp " << endl; 
+		return a.getdata() > b.getdata(); 
+	}
+};
+
+int main() {
+	set<Model, X> s;
+	Model a(100);
+	Model b(300);
+	Model c(200);
+	s.insert(a);
+	s.insert(b);
+	s.insert(c);
+
+	// Model 클래스에서 두 객체가 같다는 판단은 어떻게 할 수 있는가
+	// 이것은 100% Model 클래스의 연산자 == 의 정의에 따른다.
+
+	// Model을 원소로 갖는 set 에서는
+	// 원소의 순서를 결정하기 위해서 단 하나의 연산자( < )만을 사용한다.
+	// 이 연산자를 이용해서 중복된 원소를 검출한다.(strict weak ordering)
+	// set에 내가 원하는 원소가 존재하는지 알고 싶은 경우
+	// set의 멤버함수인 find()를 사용한다.
+	// find()함수는 원하는 원소가 있는지를 연산자 ( < ) 를 사용한다.
+	// set을 만들때 동일한 원소임을 판단하기 위하여 == 를 
+	// set의 템플릿 인자로 전달하지 않아도 됨을 의미한다.
+	// set의 멤버 find()는 실제 연산자 == 의 결과와는 다르다.
+	save();
+}
+
+
+========================
+Thu May 18 10:35:52 2017
+========================
+
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class X {
+	int sel = 0;
+public:
+	X(int n) : sel(n) {};
+	bool operator()(const Model& a, const Model& b) const { 
+		if (sel == 0)
+			return a.getid() < b.getid();
+		else
+			return a.getdata() > b.getdata(); 
+	}
+};
+
+int main() {
+	// Model 클래스에 대해서 
+	// set<Model>
+	// id순으로, size순으로 정렬
+	// 이 두 set은 자료형이 같아야 한다.
+	Model a(100);
+	Model b(200);
+	Model c(300);
+	set<Model, X> s1(X(0)); //371p
+	s1.insert(a);
+	s1.insert(c);
+	s1.insert(b);
+	
+	for (auto d : s1)
+		d.show();
+
+	set<Model, X> s2(X(1));
+	s2.insert(b);
+	s2.insert(c);
+	s2.insert(a);
+
+	for (auto d : s1)
+		d.show();
+	save();
+}
+
+
+========================
+Thu May 18 10:51:07 2017
+========================
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// 373 - set에 관련된 특별 검색 연산들
+// count
+// find
+// lower_bound
+// upper_bound
+// equal_range
+// Sequence Container
+int main() {
+	multiset<int> s{ 1, 3, 5, 2, 4, 3, 3, 3 };
+	//빨리 찾기위한 컨테이너가 associative 컨테이너
+	//전용함수를 사용한다.
+
+	//원하는 값이 몇 개 있나 
+	cout << s.count(3) << endl;
+
+	//원하는 값이 존재
+	if (s.find(6) != s.end())
+		cout << "존재" << endl;
+	else
+		cout << "없다" << endl;
+
+	for (int d : s)
+		cout << d << " ";
+	cout << endl;
+	save();
+}
+
+
+========================
+Thu May 18 10:59:30 2017
+========================
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// 373 - set에 관련된 특별 검색 연산들
+// count
+// find
+// lower_bound
+// upper_bound
+// equal_range
+// Sequence Container
+int main() {
+	multiset<int> s{ 1, 3, 5, 4, 3, 3, 3 };
+
+	//3을 새 원소로 insert
+	auto p = s.equal_range(3);
+	for (auto i = p.first; i != p.second; ++i)
+		cout << *i << endl;
+	save();
+}
+
+
+========================
+Thu May 18 11:00:48 2017
+========================
+#include <iostream>
+#include <set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// 373 - set에 관련된 특별 검색 연산들
+// count
+// find
+// lower_bound
+// upper_bound
+// equal_range
+// Sequence Container
+int main() {
+	multiset<int> s{ 1, 3, 5, 4, 3, 3, 3 };
+
+	//3을 새 원소로 insert
+	auto p = s.equal_range(3);
+	for (auto i = p.first; i != p.second; ++i)
+		cout << *i << endl;
+	s.erase(p.first, p.second);
+	for (auto d : s)
+		cout << d << endl;
+	save();
+}
+
+
+========================
+Thu May 18 11:17:55 2017
+========================
+#include <iostream>
+#include <unordered_set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// 비정렬
+int main() {
+	unordered_set<int> s{ 2,4,1,3,5,6 };
+	for (int d : s)
+		cout << d << " ";
+	cout << endl;
+
+	s.insert(rand());
+	for (int d : s)
+		cout << d << " ";
+	cout << endl;
+
+	s.insert(rand());
+	for (int d : s)
+		cout << d << " ";
+	cout << endl;
+
+	save();
+
+}
+
+
+========================
+Thu May 18 11:44:34 2017
+========================
+#include <iostream>
+#include <unordered_set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+void printSet(const unordered_multiset<int>& s) {
+	for (int i = 0; i < s.bucket_count(); ++i) {
+		cout << "b[" << i << "]   " ;
+		for (auto p = s.begin(i); p != s.end(i); ++p)
+			cout << *p <<"  ";
+		cout << endl;
+	}
+}
+int main() {
+	unordered_multiset<int> s{ 1,3,4,3,3,3,2,2 };
+	printSet(s);
+	save();
+}
+
+
+========================
+Thu May 18 12:07:17 2017
+========================
+#include <iostream>
+#include <unordered_set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class Hash{
+public:
+	size_t operator()(const Model& a) const {
+		return a.getid();
+	}
+};
+class Equal {
+public:
+	bool operator()(const Model& a, const Model& b) const {
+		if(a.getdata() == b.getdata())
+			return true;
+		return false;
+	}
+};
+void printSet(const unordered_multiset<Model, Hash, Equal>& s) {
+	for (int i = 0; i < s.bucket_count(); ++i) {
+		cout << "b[" << i << "]   " ;
+		for (auto p = s.begin(i); p != s.end(i); ++p)
+			cout << (*p).getid() <<"  ";
+		cout << endl;
+	}
+}
+int main() {
+	unordered_multiset<Model,Hash,Equal> s{ 100,200,300,700 };
+	printSet(s);
+	save();
+}
+
+
+========================
+Thu May 18 12:10:06 2017
+========================
+#include <iostream>
+#include <unordered_set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class Hash{
+public:
+	size_t operator()(const Model& a) const {
+		return a.getid();
+	}
+};
+class Equal {
+public:
+	bool operator()(const Model& a, const Model& b) const {
+		if(a.getdata() == b.getdata())
+			return true;
+		return false;
+	}
+};
+void printSet(const unordered_multiset<Model, Hash, Equal>& s) {
+	for (int i = 0; i < s.bucket_count(); ++i) {
+		cout << "b[" << i << "]   " ;
+		for (auto p = s.begin(i); p != s.end(i); ++p)
+			cout << (*p).getid() <<"  ";
+		cout << endl;
+	}
+}
+int main() {
+	unordered_multiset<Model,Hash,Equal> s{ 100,200,300,700 };
+	printSet(s);
+	save();
+}
+
+
+========================
+Thu May 18 12:10:08 2017
+========================
+#include <iostream>
+#include <unordered_set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class Hash{
+public:
+	size_t operator()(const Model& a) const {
+		return a.getid();
+	}
+};
+class Equal {
+public:
+	bool operator()(const Model& a, const Model& b) const {
+		if(a.getdata() == b.getdata())
+			return true;
+		return false;
+	}
+};
+void printSet(const unordered_multiset<Model, Hash, Equal>& s) {
+	for (int i = 0; i < s.bucket_count(); ++i) {
+		cout << "b[" << i << "]   " ;
+		for (auto p = s.begin(i); p != s.end(i); ++p)
+			cout << (*p).getid() <<"  ";
+		cout << endl;
+	}
+}
+int main() {
+	unordered_multiset<Model,Hash,Equal> s{ 100,200,300,700 };
+	printSet(s);
+	save();
+}
+
+
+========================
+Thu May 18 12:10:26 2017
+========================
+#include <iostream>
+#include <unordered_set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class Hash{
+public:
+	size_t operator()(const Model& a) const {
+		return a.getid();
+	}
+};
+class Equal {
+public:
+	bool operator()(const Model& a, const Model& b) const {
+		if(a.getdata() == b.getdata())
+			return true;
+		return false;
+	}
+};
+void printSet(const unordered_multiset<Model, Hash, Equal>& s) {
+	for (int i = 0; i < s.bucket_count(); ++i) {
+		cout << "b[" << i << "]   " ;
+		for (auto p = s.begin(i); p != s.end(i); ++p)
+			cout << (*p).getdata() <<"  ";
+		cout << endl;
+	}
+}
+int main() {
+	unordered_multiset<Model,Hash,Equal> s{ 100,200,300,700 };
+	printSet(s);
+	save();
+}
+
+
+========================
+Thu May 18 12:10:34 2017
+========================
+#include <iostream>
+#include <unordered_set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class Hash{
+public:
+	size_t operator()(const Model& a) const {
+		return a.getid();
+	}
+};
+class Equal {
+public:
+	bool operator()(const Model& a, const Model& b) const {
+		if(a.getdata() == b.getdata())
+			return true;
+		return false;
+	}
+};
+void printSet(const unordered_multiset<Model, Hash, Equal>& s) {
+	for (int i = 0; i < s.bucket_count(); ++i) {
+		cout << "b[" << i << "]   " ;
+		for (auto p = s.begin(i); p != s.end(i); ++p)
+			cout << (*p).getdata() <<"  ";
+		cout << endl;
+	}
+}
+int main() {
+	unordered_multiset<Model,Hash,Equal> s{ 100,200,300,700,300,300 };
+	printSet(s);
+	save();
+}
+
+
+========================
+Thu May 18 12:11:16 2017
+========================
+#include <iostream>
+#include <unordered_set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class Hash{
+public:
+	size_t operator()(const Model& a) const {
+		return a.getid();
+	}
+};
+class Equal {
+public:
+	bool operator()(const Model& a, const Model& b) const {
+		if(a.getdata() == b.getdata())
+			return a.getdata();
+		return false;
+	}
+};
+void printSet(const unordered_multiset<Model, Hash, Equal>& s) {
+	for (int i = 0; i < s.bucket_count(); ++i) {
+		cout << "b[" << i << "]   " ;
+		for (auto p = s.begin(i); p != s.end(i); ++p)
+			cout << (*p).getdata() <<"  ";
+		cout << endl;
+	}
+}
+int main() {
+	unordered_multiset<Model,Hash,Equal> s{ 100,200,300,700,300,300 };
+	printSet(s);
+	save();
+}
+
+
+========================
+Thu May 18 12:11:28 2017
+========================
+#include <iostream>
+#include <unordered_set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class Hash{
+public:
+	size_t operator()(const Model& a) const {
+		return a.getid();
+	}
+};
+class Equal {
+public:
+	bool operator()(const Model& a, const Model& b) const {
+		//if(a.getdata() == b.getdata())
+			return a.getdata();
+		//return false;
+	}
+};
+void printSet(const unordered_multiset<Model, Hash, Equal>& s) {
+	for (int i = 0; i < s.bucket_count(); ++i) {
+		cout << "b[" << i << "]   " ;
+		for (auto p = s.begin(i); p != s.end(i); ++p)
+			cout << (*p).getdata() <<"  ";
+		cout << endl;
+	}
+}
+int main() {
+	unordered_multiset<Model,Hash,Equal> s{ 100,200,300,700,300,300 };
+	printSet(s);
+	save();
+}
+
+
+========================
+Thu May 18 12:14:24 2017
+========================
+#include <iostream>
+#include <unordered_set>
+#include <functional>
+#include "save.h"
+#include "model.h"
+using namespace std;
+class Hash{
+public:
+	size_t operator()(const Model& a) const {
+		return hash<int>()(a.getdata());
+	}
+};
+class Equal {
+public:
+	bool operator()(const Model& a, const Model& b) const {
+		if(a.getdata() == b.getdata())
+			return true;
+		return false;
+	}
+};
+void printSet(const unordered_multiset<Model, Hash, Equal>& s) {
+	for (int i = 0; i < s.bucket_count(); ++i) {
+		cout << "b[" << i << "]   " ;
+		for (auto p = s.begin(i); p != s.end(i); ++p)
+			cout << (*p).getdata() <<"  ";
+		cout << endl;
+	}
+}
+int main() {
+	unordered_multiset<Model,Hash,Equal> s{ 100,200,300,700,300,300 };
+	printSet(s);
+	save();
+}
+
+
+========================
+Thu May 25 10:53:36 2017
+========================
+#include <iostream>
+#include <unordered_set>
+#include <algorithm>
+#include "save.h"
+#include "model.h"
+using namespace std;
+template<class T, int a>
+class MyCon {
+	T b[a];
+public:
+	MyCon() {}
+	T* begin() {
+		return &b[0];
+	}
+	T* end() {
+		return &b[a];
+	}
+};
+int main() {
+	MyCon<Model, 10> c;
+	for (Model d : c)
+		d.show();
+	cout << endl;
+	save();
+}
+
+
+========================
+Thu May 25 10:58:13 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <algorithm>
+#include "save.h"
+#include "model.h"
+using namespace std;
+template<class T, int a>
+class MyCon {
+	T b[a];
+public:
+	MyCon() {}
+	T* begin() {
+		return &b[0];
+	}
+	T* end() {
+		return &b[a];
+	}
+};
+int main() {
+	MyCon<int, 10> c;
+	copy(c.begin(), c.end(), ostream_iterator<int>(cout, "\n"));
+	save();
+}
+
+
+========================
+Thu May 25 11:31:12 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <algorithm>
+#include "save.h"
+#include "model.h"
+using namespace std;
+template<class T, int a>
+class MyCon {
+	T b[a];
+public:
+	MyCon() {}
+	T* begin() {
+		return &b[0];
+	}
+	T* end() {
+		return &b[a];
+	}
+	reverse_iterator<T*> rbegin() {
+		return reverse_iterator<T*>(b+a);
+	}
+	reverse_iterator<T*> rend() {
+		return reverse_iterator<T*>(b);
+	}
+	size_t size() const {
+		return a;
+	}
+	T operator[](int n) const { return b[n]; }
+	T& operator[](int n){ return b[n]; }
+};
+int main() {
+
+	MyCon<int, 10> c;
+	for (int d : c)
+		cout << d << endl;
+	cout << "------------" << endl;
+	rotate(c.begin(), c.begin() +1, c.end());
+	for (int i = 0;i<c.size();++i)
+		cout << c[i] << endl;
+
+	for (auto p = c.rbegin(); p != c.rend(); ++p)
+		cout << *p << endl;
+
+	save();
+}	
+
+
+========================
+Thu May 25 12:06:04 2017
+========================
+#include <iostream>
+#include <iterator>
+//#include <>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// iterator category
+
+//  intput iterator            output iterator
+//
+//                forward iterator
+//
+//               bidirectional iterator
+//
+//               randomAccess iterator
+int main() {
+	// 출력 반복자란?
+	ostream_iterator<char> p(cout);
+	*p = 'a';
+	++p;
+	*p = 'b';
+	++p;
+	*p = 'c';
+	++p;
+	*p = '\n';
+	save();
+}	
+
+
+========================
+Thu May 25 12:09:20 2017
+========================
+#include <iostream>
+#include <iterator>
+//#include <>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// iterator category
+
+//  intput iterator            output iterator
+//
+//                forward iterator
+//
+//               bidirectional iterator
+//
+//               randomAccess iterator
+int main() {
+	// 출력 반복자란?
+	ostream_iterator<char> p(cout);
+	(*p).operator= ('a');
+	++p;
+	*p = 'b';
+	++p;
+	*p = 'c';
+	++p;
+	*p = '\n';
+	save();
+}	
+
+
+========================
+Thu May 25 12:09:49 2017
+========================
+#include <iostream>
+#include <iterator>
+//#include <>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// iterator category
+
+//  intput iterator            output iterator
+//
+//                forward iterator
+//
+//               bidirectional iterator
+//
+//               randomAccess iterator
+int main() {
+	// 출력 반복자란?
+	ostream_iterator<char> p(cout);
+	p = 'a';
+	p = 'b';
+	p = 'c';
+	p = '\n';
+	save();
+}	
+
+
+========================
+Thu May 25 12:09:58 2017
+========================
+#include <iostream>
+#include <iterator>
+//#include <>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// iterator category
+
+//  intput iterator            output iterator
+//
+//                forward iterator
+//
+//               bidirectional iterator
+//
+//               randomAccess iterator
+int main() {
+	// 출력 반복자란?
+	ostream_iterator<char> p(cout);
+	p = 7;
+	save();
+}	
+
+
+========================
+Thu May 25 12:16:25 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// 임의접근반복자
+int main() {
+	vector<int> v(20000);
+	auto p = v.begin();
+	p += 20000;
+	*(v.data() + 20000);
+	save();
+}	
+
+
+========================
+Thu May 25 12:18:37 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// 반복자간의 거리를 재는 distance
+int main() {
+	list<int> c(20000);
+	vector<int> v(c.begin(), c.end());
+	cout << distance(c.begin(), c.end()) << endl;
+	cout << distance(v.begin(), v.end()) << endl;
+	save();
+
+}	
+
+
+========================
+Thu May 25 12:19:06 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// 반복자간의 거리를 재는 distance
+int main() {
+	list<int> c(20000);
+	vector<int> v(c.begin(), c.end());
+	cout << distance(c.begin(), c.end()) << endl;
+	cout << distance(v.end(), v.begin()) << endl;
+	save();
+
+}	
+
+
+========================
+Thu May 25 12:19:29 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// 반복자간의 거리를 재는 distance
+int main() {
+	list<int> c(20000);
+	vector<int> v(c.begin(), c.end());
+	cout << distance(c.end(), c.begin()) << endl;
+	cout << distance(v.end(), v.begin()) << endl;
+	save();
+
+}	
+
+
+========================
+Tue May 30 14:26:43 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+template<class iter>
+int myDistance(iter b, iter e) {
+	return myDistance(b,e, iterator_traits<iter>::iterator_category());
+	
+}
+template<class iter>
+int myDistance(iter b, iter e,random_access_iterator_tag) {
+	return e-b;
+
+}
+template<class iter>
+int myDistance(iter b, iter e, input_iterator_tag) {
+	int dis = 0;
+	for (iter i = b; i != e; ++i)
+		++dis;
+	return dis;
+}
+// 반복자간의 거리를 재는 distance
+int main() {
+	list<int> c(5);
+	vector<int> v(c.begin(), c.end());
+
+	// distance 함수는 인자로 전달된 반복자의 종류에 따라
+	// random_access 반복자면 뺄셈으로 거리를 계산하고
+	// 그렇지 않다면 하나씩 전진한 갯수를 센다.
+	// 이렇게 구현하는 방법은 530p
+	cout << myDistance(c.end(), c.begin()) << endl;
+	cout << myDistance(v.end(), v.begin()) << endl;
+	save();
+}	
+
+=====오류
+=========
+#include <iostream>
+#include <iterator>
+#include <list>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+template<class iter1, class iter2>
+void mycopy(iter1 b, iter1 e, iter2 lb) {
+	while (b != e) {
+		*lb = *b;
+		lb++;
+		b++;
+	}
+}
+template<class cont, class value>
+class my_back_inserter : iterator<output_iterator_tag, typename cont::value_type>{
+	cont* it;
+public:
+	my_back_inserter(cont& i) {
+		it = &i;
+	}
+	my_back_inserter& operator*() { return *this; }
+	void operator=(value n) { it->push_back(n); }
+	void operator++() { }
+	void operator++(int) { }
+};
+// 531p
+// 1. 일반 iterator_traits 구조체를 위한 다섯가지 자료형을 제공
+// 2. interator_traits 구조체에 대한 특수화를 제공한다.
+int main() {
+	vector<string> v{ "2017", "STL" };
+	list<string> l;
+
+
+	mycopy(v.begin(), v.end(), my_back_inserter<list<string>, string>(l));
+	list<string>::iterator iter;
+	for (iter = l.begin(); iter != l.end(); ++iter)
+		cout << *iter << endl;
+}	
+=================
+
+
+
+========================
+Thu Jun  1 10:51:41 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+// 게임엔진의 scene manager는 관리하는 목록을 유지한다.
+// 플레이어 한명과 100명의 몬스터, 그 외 배경, 사운드, 건물 등 리스트에 넣고 관리
+class Game {
+protected:
+	int id;
+public:
+	Game() { ; }
+	Game(int i) : id(i){}
+	virtual void update() = 0;
+	virtual void render() = 0;
+	virtual int getid() = 0;
+};
+class Player : public Game{
+public:
+	Player() { ; }
+	Player(int i) : Game(i) { ; }
+	virtual void update() override final {
+		cout << "Player"<< id <<"update" << endl;
+	};
+	virtual void render() override final {
+		cout << "Player" << id <<"render" << endl;
+	};
+	virtual int getid() {
+		return id;
+	};
+};
+class Monster : public Game {
+public:
+	Monster() { ; }
+	Monster(int i) : Game(i) { ; }
+	virtual void update() override final {
+		cout << "Monster" << id << "update" << endl;
+	};
+	virtual void render() override final {
+		cout << "Monster" << id << "render" << endl;
+	};
+	virtual int getid() {
+		return id;
+	};
+};
+int main() {
+	list<Game*> cont;
+	int id = 0;
+	cont.insert(cont.end(),new Player(id++));
+	for (int i = 0; i < 100; ++i)
+		cont.insert(cont.end(), new Monster(id++));
+	for (Game* p : cont)
+		if (p->getid() % 2 == 1)
+			cont.remove(p);
+	for (Game* p : cont)
+		p->update();
+	for (Game* p : cont)
+		p->render();
+	
+	save();
+}	
+
+
+
+========================
+Thu Jun  1 10:53:17 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+// 게임엔진의 scene manager는 관리하는 목록을 유지한다.
+// 플레이어 한명과 100명의 몬스터, 그 외 배경, 사운드, 건물 등 리스트에 넣고 관리
+class Game {
+protected:
+	int id;
+public:
+	Game() { ; }
+	Game(int i) : id(i){}
+	virtual void update() = 0;
+	virtual void render() = 0;
+	virtual int getid() = 0;
+};
+class Player : public Game{
+public:
+	Player() { ; }
+	Player(int i) : Game(i) { ; }
+	virtual void update() override final {
+		cout << "Player"<< id <<"update" << endl;
+	};
+	virtual void render() override final {
+		cout << "Player" << id <<"render" << endl;
+	};
+	virtual int getid() {
+		return id;
+	};
+};
+class Monster : public Game {
+public:
+	Monster() { ; }
+	Monster(int i) : Game(i) { ; }
+	virtual void update() override final {
+		cout << "Monster" << id << "update" << endl;
+	};
+	virtual void render() override final {
+		cout << "Monster" << id << "render" << endl;
+	};
+	virtual int getid() {
+		return id;
+	};
+};
+int main() {
+	list<Game*> cont;
+	int id = 0;
+	int removeC = 0;
+	cont.insert(cont.end(),new Player(id++));
+	for (int i = 0; i < 100; ++i)
+		cont.insert(cont.end(), new Monster(id++));
+	for (Game* p : cont)
+		if (p->getid() % 2 == 1) {
+			cont.remove(p);
+			++removeC;
+		}
+	for (int i = 0; i < removeC; ++i)
+		cont.insert(cont.end(), new Monster(id++));
+	for (Game* p : cont)
+		p->update();
+	for (Game* p : cont)
+		p->render();
+	
+	save();
+}	
+
+
+
+========================
+Thu Jun  1 11:18:49 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+// 게임엔진의 scene manager는 관리하는 목록을 유지한다.
+// 플레이어 한명과 100명의 몬스터, 그 외 배경, 사운드, 건물 등 리스트에 넣고 관리
+class Game {
+protected:
+	int id;
+public:
+	Game() { ; }
+	Game(int i) : id(i){}
+	virtual void update() = 0;
+	virtual void render() = 0;
+	virtual int getid() = 0;
+};
+class Player : public Game{
+public:
+	Player() { ; }
+	Player(int i) : Game(i) { ; }
+	virtual void update() override final {
+		cout << "Player"<< id <<"update" << endl;
+	};
+	virtual void render() override final {
+		cout << "Player" << id <<"render" << endl;
+	};
+	virtual int getid() {
+		return id;
+	};
+};
+class Monster : public Game {
+public:
+	Monster() { ; }
+	Monster(int i) : Game(i) { ; }
+	virtual void update() override final {
+		cout << "Monster" << id << "update" << endl;
+	};
+	virtual void render() override final {
+		cout << "Monster" << id << "render" << endl;
+	};
+	virtual int getid() {
+		return id;
+	};
+};
+int main() {
+	list<Game*> cont;
+	int id = 0;
+	int removeC = 0;
+	cont.insert(cont.end(),new Player(id++));
+	for (int i = 0; i < 100; ++i)
+		cont.insert(cont.end(), new Monster(id++));
+	/*for (auto p = cont.begin(); p != cont.end();)
+		if ((*p)->getid() & 1) {
+			p = cont.erase(p);
+			++removeC;
+		}
+		else
+			++p;*/
+	auto p = remove_if(cont.begin(), cont.end(), [](Game* a) {
+		return a->getid() & 1;
+	});
+	cont.erase(p, cont.end());
+	removeC = cont.size()-1;
+	for (int i = 0; i < removeC; ++i)
+		cont.insert(cont.end(), new Monster(id++));
+	for (Game* p : cont)
+		p->update();
+	for (Game* p : cont)
+		p->render();
+	
+	save();
+}	
+
+
+
+========================
+Thu Jun  1 11:37:19 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+// 게임엔진의 scene manager는 관리하는 목록을 유지한다.
+// 플레이어 한명과 100명의 몬스터, 그 외 배경, 사운드, 건물 등 리스트에 넣고 관리
+class Game {
+protected:
+	int id;
+public:
+	Game() { ; }
+	Game(int i) : id(i){}
+	virtual void update() = 0;
+	virtual void render() = 0;
+	virtual int getid() = 0;
+};
+class Player : public Game{
+public:
+	Player() { ; }
+	Player(int i) : Game(i) { ; }
+	virtual void update() override final {
+		cout << "Player"<< id <<"update" << endl;
+	};
+	virtual void render() override final {
+		cout << "Player" << id <<"render" << endl;
+	};
+	virtual int getid() {
+		return id;
+	};
+};
+class Monster : public Game {
+public:
+	Monster() { ; }
+	Monster(int i) : Game(i) { ; }
+	virtual void update() override final {
+		cout << "Monster" << id << "update" << endl;
+	};
+	virtual void render() override final {
+		cout << "Monster" << id << "render" << endl;
+	};
+	virtual int getid() {
+		return id;
+	};
+};
+int main() {
+	list<Game*> cont;
+	int id = 0;
+	int removeC = 0;
+	cont.insert(cont.end(),new Player(id++));
+	for (int i = 0; i < 100; ++i)
+		cont.insert(cont.end(), new Monster(id++));
+	for (auto p = cont.begin(); p != cont.end();)
+		if (dynamic_cast<Player*>(*p)) {
+			p = cont.erase(p);
+		}
+		else
+			++p;
+	for (Game* p : cont)
+		p->update();
+	for (Game* p : cont)
+		p->render();
+	
+	save();
+}	
+
+
+
+========================
+Thu Jun  1 11:47:00 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+
+// for_each()의 반환값
+int main() {
+	vector<int> v{ 1,2,3,4,5 };
+	for_each(v.begin(), v.end(), [](int& a) {
+		a *= a;
+	});
+	for (int d : v)
+		cout << d;
+	save();
+}	
+
+
+
+========================
+Thu Jun  1 11:58:20 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+template<class iter, class lambda>
+void forEach(iter b, iter e, lambda i) {
+	while (b != e)
+		i(*b++);	
+}
+// for_each()의 반환값
+// for_each()는 세번째 인자로 전달된 함수객체를 반환하다.
+int main() {
+	vector<int> v{ 1,2,3,4,5 };
+	forEach(v.begin(), v.end(), [](int& a) { a *= a; });
+	for (int d : v)
+		cout << d << endl;
+	save();
+}	
+
+
+
+========================
+Thu Jun  1 12:08:08 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// for_each()의 반환값
+// for_each()는 세번째 인자로 전달된 함수객체를 반환하다.
+// 세번째 인자가 함수객체라면(상태를 갖는다는 점에서 람다와 다르다)
+// for_each()의 반환값을 이용하는 다음과 같은 프로그램이 가능
+class MeanValue{
+
+	double sum = 0;
+	int count = 0;
+public:
+	int operator()(int n) { 
+		sum += n; 
+		++count; 
+		return sum; 
+	}
+	operator double() {
+		return sum / count;
+	}
+};
+
+int main() {
+	vector<int> v{ 1,2,3,4,5 };
+	// for_each()를 이용해 평균값 542p
+	MeanValue mv = for_each(v.begin(), v.end(), MeanValue() );
+	cout << mv << endl;
+	save();
+}	
+
+
+
+========================
+Thu Jun  1 12:08:12 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+// for_each()의 반환값
+// for_each()는 세번째 인자로 전달된 함수객체를 반환하다.
+// 세번째 인자가 함수객체라면(상태를 갖는다는 점에서 람다와 다르다)
+// for_each()의 반환값을 이용하는 다음과 같은 프로그램이 가능
+class MeanValue{
+
+	double sum = 0;
+	int count = 0;
+public:
+	int operator()(int n) { 
+		sum += n; 
+		++count; 
+		return sum; 
+	}
+	operator double() {
+		return sum / count;
+	}
+};
+
+int main() {
+	vector<int> v{ 1,2,3,4,5 };
+	// for_each()를 이용해 평균값 542p
+	MeanValue mv = for_each(v.begin(), v.end(), MeanValue() );
+	cout << mv << endl;
+	save();
+}	
+
+
+
+========================
+Thu Jun  8 11:37:05 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+int main() {
+	//all of
+	vector<int> v{ 1,2,3,4,50 };
+	// v의 모든 원소가 10보다 작은가
+	cout<< boolalpha << all_of(v.begin(), v.end(), [](int n) {return n < 10; }) << endl;
+	save();
+}	
+
+
+
+========================
+Thu Jun  8 11:44:52 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+template<class iter, class lambda>
+bool allof(iter b, iter e, lambda i) {
+	
+	while (b != e)
+		if (!i(*b++))
+			return false;
+	return true;
+}
+int main() {
+	//all of
+	vector<int> v{ 1,2,3,4,5 };
+	// v의 모든 원소가 10보다 작은가
+	cout<< boolalpha << allof(v.begin(), v.end(), [](int n) {return n < 10; }) << endl;
+	save();
+}	
+
+
+
+========================
+Thu Jun  8 11:45:00 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+template<class iter, class lambda>
+bool allof(iter b, iter e, lambda i) {
+	
+	while (b != e)
+		if (!i(*b++))
+			return false;
+	return true;
+}
+int main() {
+	//all of
+	vector<int> v{ 1,2,3,4,50 };
+	// v의 모든 원소가 10보다 작은가
+	cout<< boolalpha << allof(v.begin(), v.end(), [](int n) {return n < 10; }) << endl;
+	save();
+}	
+
+
+
+========================
+Thu Jun  8 11:58:03 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+template<class iter>
+iter Find(iter b, iter e, int n) {
+	while (b != e)
+		if (*b++ == n)
+			return --b;
+	return e;
+}
+int main() {
+	vector<int> v(100000);
+	v[v.size() - 1] = 12345678;
+	auto p = Find(v.begin(), v.end(), 12345678);
+	if (v.end() != p)
+		cout << "find!" << *p << endl;
+	else
+		cout << "find fail" << endl;
+	save();
+}	
+
+
+
+========================
+Thu Jun  8 12:04:01 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+int main() {
+	vector<int> v(100000);
+	v[v.size() - 1] = 12345678;
+	sort(v.begin(), v.end());
+	auto p = lower_bound(v.begin(), v.end(), 12345678);
+	if (v.end() != p)
+		cout << "find!" << *p << endl;
+	else
+		cout << "find fail" << endl;
+	save();
+}	
+
+
+
+========================
+Thu Jun  8 12:13:29 2017
+========================
+#include <iostream>
+#include <iterator>
+#include <list>
+#include<algorithm>
+#include <vector>
+#include "save.h"
+#include "model.h"
+using namespace std;
+int main() {
+	//find와 search
+	vector<int> v{ 1,2,3,4,5,6,7,8,9,10 };
+	vector<int> v2{ 3, 4, 5 };
+	auto p = search(v.begin(), v.end(), v2.begin(), v2.end() );
+	if (p != v.end())
+		cout << "find " << distance(v.begin(),p) << endl;
+	else
+		cout << " find fail" << endl;
+	save();
+}	
